@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Investing to FIRE early
+        </title>
+        <style>
+            html{
+                font-size: 19px;
+            }
+            h1{
+                font-size: 2rem;
+                FIRE Calculator reflecting inflation, the way of residence (renting vs. owning a home)
+            }
+            p {
+                color:black;
+                font-size: 19px;
+                font-weight: 0;
+                margin:0;
+            }
+            a {
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .blll {
+            color:red;
+        }
+        .result {
+        color:Navy;
+        font-size: 35px;
+        }
+        .netassetfire {
+        color:Green;
+        font-size: 22px;
+        margin-left:140px;
+        }
+        .cheerup {
+        color:blue;
+        font-size: 21px;
+        }
+        .reserved {
+        color:black;
+        font-size: 17px;
+        }
+        .button {
+
+        background-color: blue;
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 15px 40px;
+        border-radius: 5px;
+      }
+
+
+
+            #bold {
+                font-weight: bold;
+                font-size: 20px;
+            }
+            div {
+                background-color: grey;
+                }
+            .divA {
+                background-color: white;
+                width: 1200px;
+                height: 400px;
+
+                position: relative;
+                top: 0px;
+                left: 0px;
+                margin-top:20px;
+                margin-left:0px;
+                padding: 10px;
+
+                border: 3px solid blue ;
+                border-radius: 10px;
+                font-size: 21px;
+             }
+            .divB1 {
+                background-color: white;
+                width: 600px; <!-- 실제로 html 상에서와 미리보기 상에서의 모습이 다를 수있8  -->
+                height: 280px;
+
+                position: relative;
+                top: 20px;
+                left: 0px;
+
+                margin:5px;
+                padding: 10px;
+
+                border: 3px solid blue ;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            .divB2 {
+                background-color: white;
+                width: 600px; <!-- 실제로 html 상에서와 미리보기 상에서의 모습이 다를 수있8  -->
+                height: 280px;
+
+                position: relative;
+                top: 20px;
+                left: 0px;
+
+                margin:5px;
+                padding: 10px;
+
+                border: 3px solid blue ;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            .divB3 {
+                background-color: white;
+                width: 600px; <!-- 실제로 html 상에서와 미리보기 상에서의 모습이 다를 수있8  -->
+                height: 280px;
+
+                position: relative;
+                top: 20px;
+                left: 0px;
+
+                margin:5px;
+                padding: 10px;
+
+                border: 3px solid blue ;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            .divB4 {
+                background-color: white;
+                width: 600px; <!-- 실제로 html 상에서와 미리보기 상에서의 모습이 다를 수있8  -->
+                height: 280px;
+
+                position: relative;
+                top: 20px;
+                left: 0px;
+
+                margin:5px;
+                padding: 10px;
+
+                border: 3px solid blue ;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            .divB5 {
+                background-color: white;
+                width: 600px; <!-- 실제로 html 상에서와 미리보기 상에서의 모습이 다를 수있8  -->
+                height: 280px;
+
+                position: relative;
+                top: 20px;
+                left: 0px;
+
+                margin:5px;
+                padding: 10px;
+
+                border: 3px solid blue ;
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            body {
+                margin-left:100px;
+                font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif''
+            }
+        </style>
+    </head>
+    <body>
+<!-- 구글처럼 깔끔하고 간결하게!! -->
+
+        <div class="divA">
+          <strong><em>Please read the contents below</em></strong>
+        <br>
+        <br><p>This site provides concise and correct method to predict the time you can FIRE. To accurately reflect reality, the calculator requires inflation rate, return on investment, and dividend yield as well as basic factors such as housing costs and various cash flows. Also Instead of difficult terms such as withdrawal rate, actual costs are entered immediately.</p>
+          <ul>
+              <li>The timing of FIRE varies not only by living expenses but also by the way of residence (renting vs. owning a home)</li>
+              <li>For stability, it was assumed that FIRE is possible when after-tax return on investment exceeds the cost of living. For this reason, your assets will increase even after FIRE.</li>
+              <li>Cash held and dividends from investments will protect you from working again even if markets fall for three consecutive years</li>
+              <li>This calculator reflects inflation</li>
+              <ul>
+                  <li>Not only house prices but also monthly rent/deposits go up as prices rise</li>
+                  <li>Cash flows(Net income, cost of living) increase with inflation</li>
+                  <li>The loan interest rate = inflation rate + 2%</li>
+              </ul>
+          </ul>
+        </div>
+        <p></p><br>
+        <button class="button" ><div class="tenor-gif-embed" data-postid="15398948" data-share-method="host" data-aspect-ratio="1" data-width="10%"><a href="https://tenor.com/view/emoji-emoticon-praying-begging-please-gif-15398948">Emoji Emoticon Sticker</a>from <a href="https://tenor.com/search/emoji-stickers">Emoji Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>Calculate!</button>
+        <p></p><br>
+
+        <p id="last"></p>
+        <a href="#last">Go to the last paragraph</a><br>
+
+        <p></p>
+        <p> https://blog.naver.com/mide995/222109235892 : div 수평 배열과 관련해서 보자
+        <div class="divB1">
+
+        <!--
+        <p>Choose the way of residence (renting vs. owning a home)</p><br>
+        <select name="type-residence">
+            <option value="rent">rent</option>
+            <option value="ownership">ownership</option>
+        </select>
+      -->
+
+        <p></p><br>
+        <p>Total assets unrelated to residence <input type="text" style="text-align: right; padding-right: 10px;" id="total-asset" onKeyDown="checkFloat(event, this.value);"  size = "8" placeholder=""></p>
+        <br><p>Total liability  <input type="text" style="text-align: right; padding-right: 10px;" id="total-liability"  onKeyDown="checkFloat(event, this.value);"  size = "8" placeholder=""></p><br>
+        <p>Choose the way of living</p><br>
+        <select name="house-type">
+            <option value="ownership">ownership</option>
+            <option value="rent">rent</option>
+        </select> <br>
+        <br><p>The price of a house you own and live in <input type="text" style="text-align: right; padding-right: 10px;" id="price-house" onKeyDown="checkFloat(event, this.value);"  size = "8" placeholder=""></p>
+        <br><p>House deposit related rent  <input type="text" style="text-align: right; padding-right: 10px;" id="deposit" onKeyDown="checkFloat(event, this.value);"  size = "8" placeholder=""></p>
+        <br><p>Net asset is <input type="text" style="text-align: right; padding-right: 10px;" id="net-asset" size="8" placeholder="auto cal."> </p>
+        </div>
+
+
+        <div class="divB2">
+                  <p>Title을 옆에 Monthly Cash flow라고 붙이고, 아래의 Mohthly는 다 뺄까? </P>
+        <br><p>Monthly net income (post tax)  <input type="text" style="text-align: right; padding-right: 10px;" id="monthly-income" onKeyDown="checkFloat(event, this.value);" size = "8" placeholder=""></p>
+        <br><p>Monthly rent  <input type="text" style="text-align: right; padding-right: 10px;" id="rent" onKeyDown="checkFloat(event, this.value);"  size = "8" placeholder=""></p>
+        <br><p>Monthly living expenses excluding cost of residence  <input type="text" style="text-align: right; padding-right: 10px;" id="cost-living" onKeyDown="checkFloat(event, this.value);" size = "8" placeholder=""></p>
+        <br><p>Monthly interest expense on total liabilities<input type="text" style="text-align: right; padding-right: 10px;" id="interest-expense" onKeyDown="checkFloat(event, this.value);" size = "8" placeholder=""></p>
+        <br><p>Monthly cash flow is  <input type="text" style="text-align: right; padding-right: 10px;" id="cash-flow" onKeyDown="checkFloat(event, this.value);" size = "8"  placeholder="auto cal."> </p>
+        </div>
+
+
+
+        <div class="divB3">
+        <p>Select desired way of living at the time of FIRE at this point</p><br>
+        <select name="house-type-FIRE">
+            <option value="holdingtype">just like now</option>
+            <option value="ownership">ownership</option>
+            <option value="rent">rent</option>
+        </select><br>
+        <br><p>The price of house  <input type="text" style="text-align: right; padding-right: 10px;" id="price-house-FIRE" onKeyDown="checkFloat(event, this.value);"  size = "8" placeholder=""></p>
+        <br><p>House deposit  <input type="text" style="text-align: right; padding-right: 10px;" id="deposit-FIRE" onKeyDown="checkFloat(event, this.value);" size = "8" placeholder=""></p>
+        <br><p>Monthly rent  <input type="text" style="text-align: right; padding-right: 10px;" id="rent-FIRE" onKeyDown="checkFloat(event, this.value);" size = "8" placeholder=""></p>
+        </div>
+
+
+        <div class="divB4">
+        <p>Select expected investment environment</p><br>
+        <select name="investment-environment">
+            <option value="Normal" > Normal </option>
+            <option value="Bullish"> Bullish Random </option>
+            <option value="Bearish"> Bearish Random </option>
+        </select>
+        <p></p><br>
+        <p>Expected rates on investments</p>
+        <br><p>medium-to-long-term inflation rate  <input type="text" style="text-align: right; padding-right: 10px;" id="inflation-rate" onKeyDown="checkFloat(event, this.value);"  size = "8" > %</p>
+        <br><p>return on investment(post tax)  <input type="text" style="text-align: right; padding-right: 10px;" id="return-investment"  onKeyDown="checkFloat(event, this.value);"  size = "8" >  %</p>
+        <br><p>dividend yield from investment(post tax)  <input type="text" style="text-align: right; padding-right: 10px;" id="diviend-yield" onKeyDown="checkFloat(event, this.value);" size = "8" >  %</p>
+        </div>
+
+
+        <p></p><br>
+        <p></p><br>
+        <p></p><br>
+
+        <button class="button" id="Click-me">Calculate!</button>
+         <!-- -현재 거주양식, 미래 거주양식 선택에 따른 if문 필요(다중 if문)
+         - 버튼 안에 이모티콘 넣는게 더 낫나? https://www.youtube.com/watch?v=A7G-kAyfxqY
+         - Calculate 단추에 마우스 올리면 단추 색깔 변하게.  이것보다 아래의 기도하는 이모티콘 넣 -->
+재미 있어서 꼭 넣자. <div class="tenor-gif-embed" data-postid="15398948" data-share-method="host" data-aspect-ratio="1" data-width="10%"><a href="https://tenor.com/view/emoji-emoticon-praying-begging-please-gif-15398948">Emoji Emoticon Sticker</a>from <a href="https://tenor.com/search/emoji-stickers">Emoji Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <p></p><br>
+
+<!-- moving emoticon https://tenor.com/search/moving-emoticon-gifs -->
+
+      <marquee behavior=alternate width="600" scrollamount="8" scrolldelay="150" height = "45" bgcolor="" class="result" id="result">Putting items...</marquee>
+<!-- html 색깔 정리된 곳  https://sidepower.tistory.com/168 -->
+<!--이모지 커피가능한 곳 https://getemoji.com/  -->
+        <p class="netassetfire" id="net-asset-FIRE"> </p>
+        <p class="cheerup" id="cheerup1"> </p>
+        <p class="cheerup" id="cheerup2"> </p>
+
+        <p></p><br>
+        <p></p><br>
+
+        <p class="reserved">Copyright © 2022 Finance about FIRE - All Rights Reserved.</p>
+
+        <script>
+//https://nm-it-diary.tistory.com/55   질문 작성 이름 fly, 패스워드 4040
+
+//<p>diviend yield from investment(post tax)  <input type="text" style="text-align: right; padding-right: 10px;" id="diviend-yield" onKeyUp="removeChar(event); inputNumberFormat(this);" onKeyDown="inputNumberFormat(this);" size >  %</p>
+
+            function checkFloat(event, v){
+              var key = event.key;
+              console.log(key);
+              //if(key == 'Process') event.preventDefault();  //한글 입력 방지용인데, 작동 안됨
+              if((key >=0 && key <10) || key == 'Backspace' || key == 'Delete' || key == 'ArrowLeft' || key == 'ArrowRight'){
+                return true;
+              }   else if (key == '.'){
+                          if(v =='') event.preventDefault();
+                            else if (v.indexOf('.') === -1) return true;
+                                  else event.preventDefault();  //이 부분이 작동 안하다가 작동함 ㅎㅎ
+              } else{
+                event.preventDefault();   //영어는 안되지만 한글은 입력된다.
+              }
+            }
+
+// alert 발생시 커서 위치 이동: jquery element focus 구글 검색
+// Tab키로 위치 이동하는 것도 구현하면 거의 끝남
+
+//javascript 연산자 https://blog.naver.com/seojin0124/222852485943
+
+//입력 없을 때나, 문자가 입력되었을 때 cursor위치와 화면이 자동 이동되게 하자!//
+
+              document.getElementById("Click-me").onclick = function() {
+               let count=0;
+               if((document.getElementById("total-asset").value=="")&&(count==0)){
+                   alert("Enter total assets");
+                   count=1;
+               }
+               if((document.getElementById("total-liability").value=="")&&(count==0)){
+                   alert("Write down total liabilities");
+                   count=1;
+              }
+
+              if((document.getElementById("price-house").value=="")&&(count==0)){
+                  alert("Write down the house price");
+                   count=1;
+              }
+              if((document.getElementById("deposit").value=="")&&(count==0)){
+                   alert("Write down the house deposit");
+                   count=1;
+               }
+               if((document.getElementById("monthly-income").value=="")&&(count==0)){
+                   alert("Enter monthly income");
+                   count=1;
+               }
+               if((document.getElementById("rent").value=="")&&(count==0)){
+                   alert("Write down the monthly rent");
+                   count=1;
+               }
+               if((document.getElementById("cost-living").value=="")&&(count==0)){
+                   alert("Write down monthly living expenses");
+                   count=1;
+               }
+               if((document.getElementById("price-house-FIRE").value=="")&&(count==0)){
+                   alert("Write down the house price at the time of FIRE at this point");
+                   count=1;
+               }
+               if((document.getElementById("deposit-FIRE").value=="")&&(count==0)){
+                   alert("Write down the house deposit at the time of FIRE at this point");
+                   count=1;
+               }
+               if((document.getElementById("rent-FIRE").value=="")&&(count==0)){
+                   alert("Write down the monthly rent at the time of FIRE at this point");
+                   count=1;
+               }
+               if((document.getElementById("inflation-rate").value=="")&&(count==0)){
+                   alert("Write down the inflation rate");
+                   count=1;
+               }
+               if((document.getElementById("return-investment").value=="")&&(count==0)){
+                   alert("Enter the return on investment");
+                   count=1;
+               }
+               if((document.getElementById("diviend-yield").value=="")&&(count==0)){
+                   alert("Enter the dividend yield");
+                   count=1;
+               }
+
+              var a, b, c, d, e, f, g, h, i, j, k, l, m, loanrate, netasset, interestexpense, cashflow;
+              a = parseInt(document.getElementById("total-asset").value);
+              b = parseInt(document.getElementById("total-liability").value);
+              c = parseInt(document.getElementById("price-house").value);
+              d = parseInt(document.getElementById("deposit").value);
+              e = parseInt(document.getElementById("monthly-income").value);
+              f = parseInt(document.getElementById("rent").value);
+              g = parseInt(document.getElementById("cost-living").value);
+              h = parseInt(document.getElementById("price-house-FIRE").value);
+              i = parseInt(document.getElementById("deposit-FIRE").value);
+              j = parseInt(document.getElementById("rent-FIRE").value);
+              k = parseInt(document.getElementById("inflation-rate").value)*0.01;
+              l = parseInt(document.getElementById("return-investment").value)*0.01;
+              m = parseInt(document.getElementById("diviend-yield").value)*0.01;
+
+
+              if(isNaN(a) && count==0){
+               alert("Not a number is entered\nEnter numbers in total assets");
+                   count=1;
+               }
+               if(isNaN(b) && count==0){
+               alert("Not a number is entered\nEnter numbers in total liability");
+                   count=1;
+               }
+               if(isNaN(c) && count==0){
+               alert("Not a number is entered\nEnter numbers in price of a house");
+                   count=1;
+               }
+               if(isNaN(d) && count==0){
+               alert("Not a number is entered\nEnter numbers in house deposit");
+                   count=1;
+               }
+               if(isNaN(e) && count==0){
+               alert("Not a number is entered\nEnter numbers in monthly income");
+                   count=1;
+               }
+               if(isNaN(f) && count==0){
+               alert("Not a number is entered\nEnter numbers in rent");
+                   count=1;
+               }
+               if(isNaN(g) && count==0){
+               alert("Not a number is entered\nEnter numbers in living expense excluding rent");
+                   count=1;
+               }
+               if(isNaN(h) && count==0){
+               alert("Not a number is entered\nEnter numbers in price of a house at FIRE");
+                   count=1;
+               }
+               if(isNaN(i) && count==0){
+               alert("Not a number is entered\nEnter numbers in deposit at FIRE");
+                   count=1;
+               }
+               if(isNaN(j) && count==0){
+               alert("Not a number is entered\nEnter numbers in rent at FIRE");
+                   count=1;
+               }
+               if(isNaN(k) && count==0){
+               alert("Not a number is entered\nEnter numbers in inflation rate");
+                   count=1;
+               }
+               if(isNaN(l) && count==0){
+               alert("Not a number is entered\nEnter numbers in return on investment");
+                   count=1;
+               }
+               if(isNaN(m) && count==0){
+               alert("Not a number is entered\nEnter numbers in dividend yield");
+                   count=1;
+               }
+
+
+              loanrate = k + 0.02;
+              netasset = a - b + c + d;
+              interestexpense = b * loanrate / 12;
+              cashflow = f - e- g- interestexpense;
+              document.getElementById("net-asset").value = Math.round(netasset);
+              document.getElementById("interest-expense").value = Math.round(interestexpense);
+              document.getElementById("cash-flow").value = Math.round(cashflow);
+
+              //alert(a);  //alert(Math.round(a)); 를 하면 키보드 입력에 영어도 입력되는 등의 오류 나옴
+              //alert(b);  //한글이 먼저 입력되어 있으면 Nan 표시. 숫자 다음에 나오는 한글값은 이후 숫자와 함께 같이 무시됨.
+              //alert(c);
+              //alert(d);
+
+              if(count==0){
+
+              //FIRE 계산하는 while문
+
+
+              document.getElementById("result").innerHTML =  "You can FIRE in " + "10"  + " years";
+              document.getElementById("net-asset-FIRE").innerHTML = "           Net asset at FIRE will be"+ "153305" +"!" ;
+              document.getElementById("cheerup1").innerHTML = "Are you disappointed that there's too much time left?" ;
+              document.getElementById("cheerup2").innerHTML = "Don't worry. Re-enter the financial factors and calculate it again!" ;
+
+              //alert("Are you disappointed that there's too much time left? Don't worry. Re-enter the financial factors and calculate again");
+
+              }
+
+
+
+
+
+
+
+
+
+
+                //console.log(FIRE기간)
+                //값들을 default로 입력해 두고, 사용자가 숫자 앞뒤로 문자를 넣었을 때에는 문자 무시하도록 코딩할 것: 타사이트 참조!
+
+                //document.getElementById("total-asset-FIRE").innerHTML = +
+
+
+            }
+        </script>
+
+    </body>
+
+
+</html>

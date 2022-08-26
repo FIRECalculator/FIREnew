@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            Retirement Calculator: Inflation, residence applied
+            Retirement Calculator - Inflation, residence applied
         </title>
         <style>
             html{
@@ -58,6 +58,7 @@
                 font-weight: 0;
                 margin-left: 200px;
                 margin-right: 200px;
+                line-height: 160%;
             }
             a {
                 text-decoration: none;
@@ -513,10 +514,12 @@
               padding: 0px 10px;
               border-radius: 0px 0 0 0px ;
             }
+
             .list01 {
               margin-left: 200px;
               margin-right: 200px;
               list-style: disc;
+              line-height: 180%;
             }
             .list02 {
               margin-left: 0px;
@@ -632,7 +635,7 @@
 
       </div>
       <div class = "divD11">
-      <h4>Choose the current</h4>
+      <h4 style="color:blue;">Choose the current</h4>
       <h4>way of living</h4>
     </div>
 
@@ -704,7 +707,7 @@
   </div>
 
   <div class = "divD31">
-  <h4>Select the desired </h4>
+  <h4 style="color:blue;">Select the desired </h4>
     <h4>way of living</h4>
   </div>
 
@@ -824,9 +827,12 @@
 
         <p></p><br>
         <p></p><br>
+<!-- broken..
+<img width ="50%" height = "50%" src="https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZpbmFuY2lhbCUyMGZyZWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="driving woman">
+-->
 
         <h2 align= "left"> &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp Explained</h2>
-        <p>This site provides concise and correct method to predict the time you can FIRE. To accurately reflect reality, the calculator requires inflation rate, return on investment, and dividend yield as well as basic factors such as housing costs and various cash flows. Also Instead of difficult terms such as withdrawal rate, actual costs are entered immediately.</p>
+        <p style="">This site provides concise and correct method to predict the time you can FIRE. To accurately reflect reality, the calculator requires inflation rate, return on investment, and dividend yield as well as basic factors such as housing costs and various cash flows. Also Instead of difficult terms such as withdrawal rate, actual costs are entered immediately.</p>
         <ul class="list01">
             <li>The timing of FIRE varies not only by living expenses but also by the way of residence (renting vs. owning a home)</li>
             <li>For stability, it was assumed that FIRE is possible when after-tax return on investment exceeds the cost of living. For this reason, your assets will increase even after FIRE.</li>
@@ -1230,6 +1236,8 @@ m     dividend-yield
 
                   var resulted = document.getElementById("result");
                   resulted.innerHTML = results;
+                  resulted.style.color="SteelBlue";
+                  resulted.style.bolder;
                   if(results == 0) {
                     resulted.innerHTML = "";
                     alert("I'm sorry you can't retire in 70 years as this condition.\n Adjust the conditions and try again!");
@@ -1237,6 +1245,8 @@ m     dividend-yield
                   else {
                     resulted.innerHTML = results;
                     document.getElementById("net-assets").innerHTML = Math.round(netasset[results]);
+                    document.getElementById("net-assets").style.bolder;
+                    document.getElementById("net-assets").style.color="OliveDrab";
                   }
 
                 }   // count if end

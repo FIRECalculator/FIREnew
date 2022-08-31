@@ -390,7 +390,7 @@
 
 
             .divh0 {
-              width: 1050px;
+              width: 1080px;
               height: 715px;
 
               position: absolute;
@@ -1318,7 +1318,6 @@ m     dividend-yield
 
 
 
-
                 const data = [];
                 const data2 = [];
                 const data3 = [];
@@ -1393,23 +1392,31 @@ don't work. limit is 9?
 */
                   }
 
+                  var ctx;
+
+// doing this, don't draw                  ctx.clearRect(0,0,document.getElementById('myChart').width, document.getElementById('myChart').height);
+
+
+
                 const totalDuration = 2000;
                 const delayBetweenPoints = totalDuration / data.length;
-
 
                 const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
 
 
 //                myChart.destroy();
 
-                var ctx = document.getElementById('myChart').getContext('2d');
+                ctx = document.getElementById('myChart').getContext('2d');
 //                ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-/*
-                ctx.fillStyle = 'blue';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-filling color don't work
-*/
+
+//                ctx.fillStyle = 'blue';   // ctx.strokeStyle = "blue";
+//                ctx.fillRect(0, 0, 600, 300);  // ctx.strokeRect(,,,);
+//                ctx.lneWidth = 4;
+// filling color work after calculating
+
+
+
                 var myChart = new Chart(ctx, {
 
 
@@ -1475,12 +1482,15 @@ filling color don't work
                     },
                     scales: {
                       x: {
+                        beginAtZero: true,
+                        min: 2022,
+                        max: 2052,
                         type: 'linear'  //linear 'log'
 
                       },
                       y: {
                         suggestedMin: 0,
-                        suggestedMax: netasset[70], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
+                        suggestedMax: netasset[30], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
                       }
                     } //scales
                   } //options

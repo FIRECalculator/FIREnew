@@ -2,21 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             Retirement Calculator - Inflation, residence applied
         </title>
-        <style>
+        <style type="text/CSS">
             html{
                 font-size: 22px;
             }
             h1{
                 font-size: 53px;
                 font-weight: bolder;
-                line-height: 40%;
+                line-height: 20%;
             }
 
             h2{
                 font-size: 31px;
+                line-height: 10%;
 
             }
             h3{
@@ -64,8 +66,9 @@
                 text-decoration: none;
                 font-weight: bold;
             }
-            .blll {
-            color:red;
+
+        .blll {
+        color:red;
         }
         .result {
         color:Navy;
@@ -106,7 +109,17 @@
         width: 395px
       }
 
-
+      .int-area label.warning {
+          color: red !important;
+          animation: warning .3s ease;
+          animation-iteration-count: 3;
+      }
+      @keyframes warning {
+          0% {trasnform: translatex(-8px);}
+          25% {trasnform: translatex(8px);}
+          50% {trasnform: translatex(-8px);}
+          75% {trasnform: translatex(8px);}
+      }
 
             #bold {
                 font-weight: bold;
@@ -378,7 +391,7 @@
 
             .divh0 {
               width: 1050px;
-              height: 160px;
+              height: 715px;
 
               position: absolute;
               top: 200px;
@@ -434,6 +447,10 @@
               border: 3px solid white ;
               font-size: 33px;
               font-weight: bold;
+            }
+            .chartBox {
+                width: 1000px;
+                height: 600px;
             }
             .divh31 {
               background-color: white;
@@ -566,11 +583,11 @@
         </select>
       -->
 
-        <h3><label for="total-asset"> TOTAL ASSETS </label></h3>
-        <h4><label for="total-asset">(Unrelated to home)</label> </h4>
+        <h3><label for="total-asset"> PORTFOLIO</label></h3>
+        <h4><label for="total-asset">(Current worth. Unrelated to home)</label> </h4>
         <h4><br></h4>
-        <h3><label for="total-liability">TOTAL LIABILITY </label> </h3>
-        <h4><label for="total-liability">(An interest-bearing loan)</label></h4>
+        <h3><label for="total-liability">LIABILITY </label> </h3>
+        <h4><label for="total-liability">(Interest-bearing loan)</label></h4>
 <!--
         <p>Choose the way of living</p><br>
         <select name="house-type">
@@ -586,7 +603,7 @@
 
       <div class = "divC1">
 
-        <input type="text" style= "text-align: right" id="total-asset" onKeyDown="checkFloat(event, this.value);"  placeholder=""><br>
+        <input type="text" style= "text-align: right" id="total-asset" onKeyDown="checkFloat(event, this.value);"  placeholder="" ><br>
         <h51></51>
         <input type="text" style= "text-align: right" id="total-liability"  onKeyDown="checkFloat(event, this.value);"  placeholder=""><br>
         <h52></h52>
@@ -601,6 +618,9 @@
       </div>
       <div class = "divD01">
         <select id="cashratio">
+
+<!--      <option value="ignorecash">Don't care condition2/option>      -->
+
           <option value="0%">0%</option>
           <option value="5%">5%</option>
           <option value="10%">10%</option>
@@ -641,9 +661,9 @@
 
       <div class = "divD12">
         <select id="selectvalue">
-          <option value="noselect">select</option>
-          <option value="ownership">ownership</option>
-          <option value="renting">renting</option>
+          <option value="noselect">Select</option>
+          <option value="ownership">Ownership</option>
+          <option value="renting">Renting</option>
       </select>
 
 
@@ -656,7 +676,7 @@
         <h3><label for="annual-income">ANNUAL INCOME</label></h3>
         <h4><label for="annual-income">(Post tax)</label></h4>
         <h4><br></h4>
-        <h3><label for="annual-rent">ANNUAL RENT (12*RENT)</label></h3>
+        <h3><label for="annual-rent">ANNUAL RENT (12 * RENT)</label></h3>
         <h4><label for="annual-rent">(From tomorrow, in case of renting) </label></h4>
         <h4><br></h4>
         <h3><label for="cost-living">ANNUAL LIVING EXPENSES</label></h3>
@@ -714,9 +734,9 @@
   <div class = "divD32">
 
   <select id="selectvalueFIRE">
-      <option value="noselect">select</option>
-      <option value="ownership">ownership</option>
-      <option value="renting">renting</option>
+      <option value="noselect">Select</option>
+      <option value="ownership">Ownership</option>
+      <option value="renting">Renting</option>
   </select>
 
 
@@ -732,15 +752,15 @@
 -->
 
 <div class="divB30">
-        <h3> - INVESTMENT ENVIRONMENT UNTIL FIRE</h3>
+        <h3> - INVESTMENT ENVIRONMENT</h3>
 </div>
 
 <div class="divB4">
         <h3><label for="inflation-rate">EXPECTED INFLATION RATE</label></h3>
         <h4><label for="inflation-rate">(Average inflation rate is %)</label></h4>
         <h4><br></h4>
-        <h3><label for="return-investment">RETURN ON INVESTMENT</label></h3>
-        <h4><label for="return-investment">(In portfolio, 10%~15% is recommended)</label></h4>
+        <h3><label for="return-investment">RETURN ON PORTFOLIO</label></h3>
+        <h4><label for="return-investment">(10%~15% is recommended)</label></h4>
         <h4><br></h4>
         <h3><label for="dividend-yield">DIVIDEND YIELD</label></h3>
         <h4><label for="dividend-yield">(Dividends on portfolio give stability)</label></h4>
@@ -798,10 +818,17 @@
             <h2  align= "left" id="net-assets"> </h2>
         </div>
 
-
-        <div class="divh4">
-            <h2  align= "center"> A graph will be attached </h2>
+        <div class="chartBox">
+        <canvas id="myChart"></canvas>
         </div>
+
+<!--
+        <div class="chartBox">
+        <canvas id="myChart2"></canvas>
+        </div>
+-->
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
       </div>
@@ -824,7 +851,8 @@
 <!-- share sharethis.com/  -->
 <!--emoji https://getemoji.com/  -->
 
-
+        <p></p><br>
+        <p></p><br>
         <p></p><br>
         <p></p><br>
 <!-- broken..
@@ -839,8 +867,8 @@
             <li>Cash held and dividends from investments will protect you from working again even if markets fall for three consecutive years. In order to achieve this goal, it was assumed that FIRE is possible when Cash held and dividends from investments over the next two years exceed the living cost, monthly rent and interest expense for two years</li>
             <li>Summarizing the conditions for retirement(FIRE), </li>
                 <ul class="list02">
-                <li>Expected return on investment(after-tax) exceeds the cost of living, monthly rent and interest expense each year</li>
-                <li>Cash held and expected dividends from investments over the next two years exceed the living cost, monthly rent and interest expense for two years</li>
+                <li><em><strong>Condition1</strong></em>: Expected return on investment(after-tax) exceeds the cost of living, monthly rent and interest expense each year</li>
+                <li><em><strong>Condition2</strong></em>: Cash held and expected dividends from investments over the next two years exceed the living cost, monthly rent and interest expense for two years</li>
                 </ul>
             <li>This calculator reflects inflation</li>
 
@@ -959,17 +987,24 @@
                             annualrentFIRE[0] = 0;
                       }
                         else if(selectvalueFIRE == "renting"){
-                            annualrentFIRE[0] = j;
+                            annualrentFIRE[0] = 0;    //j라고 넣으면 첫해부터 cashflow에 영향미침
                         }
                   }
 
 
                if((document.getElementById("total-asset").value=="")&&(count==0)){
-                   alert("Enter total assets");
+/*
+                  document.getElementById('total-asset').next('label').addClass('warning');
+              		setTimeout(function() {
+              		document.getElementById('total-asset').next('label').removeClass('warning');
+              		}, 1500);
+TO do this, in input. 'required' in necessary... in this text, required don't work
+*/
+                   alert("Enter portfolio worth");
                    count=1;
                }
                if((document.getElementById("total-liability").value=="")&&(count==0)){
-                   alert("Write down total liabilities");
+                   alert("Write down liabilities");
                    count=1;
               }
 
@@ -982,11 +1017,11 @@
                    count=1;
                }
                if((document.getElementById("annual-rent").value=="")&&(count==0)&&(selectvalue == "renting")){
-                   alert("Write down the monthly rent");
+                   alert("Write down annual rent");
                    count=1;
                }
                if((document.getElementById("cost-living").value=="")&&(count==0)){
-                   alert("Write down monthly living expenses");
+                   alert("Write down annual living expenses");
                    count=1;
                }
                if((document.getElementById("price-house-deposit-FIRE").value=="")&&(count==0)){
@@ -994,7 +1029,7 @@
                    count=1;
                }
                  if((document.getElementById("rent-FIRE").value=="")&&(count==0)&&(selectvalueFIRE == "renting")){
-                   alert("Write down the monthly rent at the time of FIRE at this point");
+                   alert("Write down the annual rent at the time of FIRE at this point");
                    count=1;
                }
                if((document.getElementById("inflation-rate").value=="")&&(count==0)){
@@ -1002,7 +1037,7 @@
                    count=1;
                }
                if((document.getElementById("return-investment").value=="")&&(count==0)){
-                   alert("Enter the return on investment");
+                   alert("Enter the return on portfolio");
                    count=1;
                }
                if((document.getElementById("dividend-yield").value=="")&&(count==0)){
@@ -1012,11 +1047,11 @@
 
 
               if(isNaN(a) && count==0){
-               alert("Not a number is entered\nEnter numbers in total assets");
+               alert("Not a number is entered\nEnter numbers in portfolio");
                    count=1;
                }
                if(isNaN(b) && count==0){
-               alert("Not a number is entered\nEnter numbers in total liability");
+               alert("Not a number is entered\nEnter numbers in liability");
                    count=1;
                }
                if(isNaN(c) && count==0){
@@ -1048,7 +1083,7 @@
                    count=1;
                }
                if(isNaN(l) && count==0){
-               alert("Not a number is entered\nEnter numbers in return on investment");
+               alert("Not a number is entered\nEnter numbers in return on portfolio");
                    count=1;
                }
                if(isNaN(m) && count==0){
@@ -1063,7 +1098,7 @@
               var jj, kk;
               jj = 0;
               kk = 0;
-              results = 0;
+              results = 100;
 
               loanrate = k + 0.02;
               interestexpense = b * loanrate ;
@@ -1082,13 +1117,13 @@
               dividend [0] = 0;
 
               annualrentvirtualFIRE [0] = j;
-              totalassetvirtualFIRE [0] = 0;
+//              totalassetvirtualFIRE [0] = 0;
               pricehousedepositvirtualFIRE [0] = h;
               returnsvirtualFIRE [0] = 0;
               returnsvirtualFIRE [1] = 0;
 
-              dividendvirtual [0] = 0 ;
-              dividendvirtual [1] = 0 ;
+//              dividendvirtual [0] = 0 ;
+//              dividendvirtual [1] = 0 ;
               cashvirtual [0] = 0;
               cashvirtual [1] = 0;
 
@@ -1097,7 +1132,7 @@
               cashflowreturn [0] = 0;
               netasset [0] = a - b + c ;
 
-              if(count==0){
+
 
 /*
 a     total-asset
@@ -1112,69 +1147,132 @@ k     inflation-rate
 l     return-investment
 m     dividend-yield
 */
+      if(count==0){
 
-              for(jj = 1; jj<=70; jj = jj + 1){
+              for(jj = 0; jj<=30; jj = jj + 1){
 
+                if(jj == 0){
+                  if(selectvalue == "ownership") {
+                     pricehousedeposit[jj+1] = pricehousedeposit[jj] * (1 + k);
+                  }
+                  if(selectvalue == "renting") {
+                      pricehousedeposit[jj+1] = pricehousedeposit[jj];
+                  }
+
+                    if(selectvalueFIRE == "ownership") {
+                        annualrentvirtualFIRE[jj] = 0 ;
+                        annualrentvirtualFIRE[jj+1] = 0 ;
+
+                        pricehousedepositvirtualFIRE[jj+1] = pricehousedepositvirtualFIRE[jj] * (1 + k);
+                    }
+                    if(selectvalueFIRE == "renting") {
+                          annualrentvirtualFIRE[jj+1] = annualrentvirtualFIRE[jj] * (1 + k);
+                    }
+                 }
+
+                if(jj > 0){
                       costliving [jj] = costliving[jj-1] * (1 + k);
                       annualincome[jj] = annualincome[jj-1] * (1 + k);
                       annualrent[jj] = annualrent[jj-1] * (1 + k);
 
-                 if(kk == 0){
+                       if(kk == 0){
 
-                      annualrentFIRE[jj] = 0;
-                      pricehousedepositFIRE[jj] = 0;
+                            if(selectvalue == "ownership") {
+                               pricehousedeposit[jj] = pricehousedeposit[jj-1] * (1 + k);
+                               pricehousedeposit[jj+1] = pricehousedeposit[jj] * (1 + k);
+                            }
+                            if(selectvalue == "renting") {
+                                pricehousedeposit[jj] = pricehousedeposit[jj-1];
+                                pricehousedeposit[jj+1] = pricehousedeposit[jj];
+                            }
 
-                      if(selectvalue == "ownership") {
-                         pricehousedeposit[jj] = pricehousedeposit[jj-1] * (1 + k);
+                              if(selectvalueFIRE == "ownership") {
+//                                  annualrentFIRE[jj] = 0;
+
+                                  annualrentvirtualFIRE[jj] = 0 ;
+                                  annualrentvirtualFIRE[jj+1] = 0 ;
+
+                                  pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
+                                  pricehousedepositvirtualFIRE[jj+1] = pricehousedepositvirtualFIRE[jj] * (1 + k);
+                              }
+                              if(selectvalueFIRE == "renting") {
+//                                    annualrentFIRE[jj] = annualrentFIRE[jj-1] * (1 + k);
+
+                                    annualrentvirtualFIRE[jj] = annualrentvirtualFIRE[jj-1] * (1 + k);
+                                    annualrentvirtualFIRE[jj+1] = annualrentvirtualFIRE[jj] * (1 + k);
+
+                                    pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
+                              }
+                         }
+                }
+
+
+
+
+                  var increaseofreturnsvirtualFIRE;
+
+//here importanat
+                  if(kk == 0) {
+                      totalassetvirtualFIRE[jj] = netasset[jj] + b - pricehousedepositvirtualFIRE[jj] ;
+                      returnsvirtualFIRE[jj] = totalassetvirtualFIRE[jj] * l;
+                      costliving [jj+1] = costliving[jj] * (1 + k);
+
+                      cashvirtual[jj] = totalassetvirtualFIRE[jj] * cashratio ;
+
+                      dividendvirtual [jj] = totalassetvirtualFIRE[jj] * m;
+                      dividendvirtual [jj+1] = dividendvirtual [jj] * (1+l-m);
+
+                      totalassetvirtualFIRE[jj+1] = totalassetvirtualFIRE[jj] +returnsvirtualFIRE[jj] - costliving[jj] - annualrentvirtualFIRE[jj] - interestexpense;
+                      returnsvirtualFIRE[jj+1] = totalassetvirtualFIRE[jj+1] * l;
+                      increaseofreturnsvirtualFIRE = returnsvirtualFIRE[jj+1]/returnsvirtualFIRE[jj]-1;
+                  }
+
+                      while(kk == 0 ){
+//here importanat
+                        if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense)) && ((cashvirtual[jj] + dividendvirtual [jj] + dividendvirtual [jj+1]) >= (costliving [jj] + costliving [jj+1]  + annualrentvirtualFIRE[jj] + annualrentvirtualFIRE[jj+1] + interestexpense * 2))) {
+
+                          results = jj;
+
+                          annualincome[jj] = 0;
+                          annualrent[jj] = 0;
+                          pricehousedeposit[jj] = 0;
+                          pricehousedeposit[jj+1] = 0;
+
+                          annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
+                          pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
+
+                          totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+
+                          kk = 1;
+                        }  //if end
+                        break;
+                      }  // while end
+
+                      if(kk == 0){
+                          annualrentFIRE[jj] = 0;
+                          pricehousedepositFIRE[jj+1] = 0;
                       }
-                        else {
-                            pricehousedeposit[jj] = pricehousedeposit[jj-1];
-                        }
+                      if(kk == 1){
+                            annualrent[jj] = 0;
+                            pricehousedeposit[jj] = 0;
+                            pricehousedeposit[jj+1] = 0;
+                            if(selectvalueFIRE == "ownership") {
+                                annualrentFIRE[jj] = 0;
+//필요없이 에러만 만들어냄        pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] * (1 + k);
+                                pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] * (1 + k);
+                            }
 
-                        if(selectvalueFIRE == "ownership") {
-
-                            annualrentvirtualFIRE[jj] = 0 ;
-                            annualrentvirtualFIRE[jj+1] = 0 ;
-                            annualrentvirtualFIRE[jj+2] = 0 ;
-
-                            pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
-                        }
-                       else {
-                              annualrentvirtualFIRE[jj] = annualrentvirtualFIRE[jj-1] * (1 + k);
-                              annualrentvirtualFIRE[jj+1] = annualrentvirtualFIRE[jj] * (1 + k);
-                              annualrentvirtualFIRE[jj+2] = annualrentvirtualFIRE[jj+1] * (1 + k);
-
-                              pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
-                          }
-
-                  }
-
-
-
-                  if(kk == 1){
-
-                        annualrentFIRE[jj] = annualrentFIRE[jj-1] * (1 + k);
-
-                        if(selectvalueFIRE == "ownership") {
-
-                            pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] * (1 + k);
-
-                        }
-
-                       else {
-
-                              pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] ;
-
-                          }
-
-                  }
-
-
+                            if(selectvalueFIRE == "renting") {
+                                  annualrentFIRE[jj+1] = annualrentFIRE[jj] * (1 + k);
+//필요없이 에러만 만들어냄          pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] ;
+                                  pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] ;
+                              }
+                      }
 
                       cashflow[jj] =  annualincome[jj] - annualrent[jj] - annualrentFIRE[jj] - costliving [jj] - interestexpense ;
 
-                      returns [jj] = totalasset[jj-1] * l;
-                      dividend [jj] = totalasset[jj-1]* m;
+                      returns [jj] = totalasset[jj] * l;
+                      dividend [jj] = totalasset[jj]* m;
 
                       if(cashflow[jj] >= 0){
                          cashflowreturn[jj] = cashflow[jj]  + cashflow[jj] * (l * 0.447) + returns [jj];
@@ -1183,52 +1281,10 @@ m     dividend-yield
                          cashflowreturn[jj] = cashflow[jj] + returns [jj];
                       }
 
-                      totalasset[jj] = totalasset[jj-1] + cashflowreturn[jj];
+// this is necessary? Yes
+                      totalasset[jj+1] = totalasset[jj] + cashflowreturn[jj];
 
-                      netasset[jj] =  totalasset[jj] - b + pricehousedeposit[jj] + pricehousedepositFIRE[jj];
-
-                      totalassetvirtualFIRE[jj] = netasset[jj] + b - pricehousedepositvirtualFIRE[jj] ;
-
-                      returnsvirtualFIRE[jj+1] = totalassetvirtualFIRE[jj] * l;
-                      costliving [jj+1] = costliving[jj] * (1 + k);
-                      costliving [jj+2] = costliving[jj+1] * (1 + k);
-
-                      dividendvirtual [jj+1] = totalassetvirtualFIRE[jj] * m;
-                      cashvirtual[jj] = totalassetvirtualFIRE[jj] * cashratio ;
-
-
-                      while(kk == 0 ){
-
-
-                        if((returnsvirtualFIRE[jj+1] >= (annualrentvirtualFIRE[jj+1] + costliving [jj+1] + interestexpense)) && ((cashvirtual[jj] + dividendvirtual [jj+1] * 2) >= (costliving [jj+1] + costliving [jj+2]  + annualrentvirtualFIRE[jj+1] + annualrentvirtualFIRE[jj+2] + interestexpense * 2))) {
-
-                          results = jj;
-
-                          annualincome[jj] = 0;
-                          annualrent[jj] = 0;
-                          pricehousedeposit[jj] = 0;
-
-                          annualrentFIRE[jj] = annualrentFIRE[0] * Math.pow((1 + k), jj);
-                          pricehousedepositFIRE[jj] = pricehousedepositFIRE[0] * Math.pow((1 + k), jj);
-
-                          kk = 1;
-
-                        }
-
-                        break;
-                      }  // while end
-
-    /*
-                      graph() {
-                      netasset[jj]
-                      cashflow[jj]
-                      returns [jj]
-
-    */
-
-
-  //                      document.getElementById("result").innerHTML =  "10";
-
+                      netasset[jj+1] =  totalasset[jj+1] - b + pricehousedeposit[jj+1] + pricehousedepositFIRE[jj+1];
 
 
                   } // for end
@@ -1238,11 +1294,12 @@ m     dividend-yield
                   resulted.innerHTML = results;
                   resulted.style.color="SteelBlue";
                   resulted.style.bolder;
-                  if(results == 0) {
-                    resulted.innerHTML = "";
-                    alert("I'm sorry you can't retire in 70 years as this condition.\n Adjust the conditions and try again!");
+                  if(results == 100) {
+                  resulted.innerHTML = "";   //kk는 0으로 나오는데... annualrentFIRE가 계속 증가한단 말이지..
+                    document.getElementById("net-assets").innerHTML = "";
+                    alert("I'm sorry you can't retire in 30 years as this condition.\n Adjust the conditions and try again!");
                   }
-                  else {
+                  if(results != 100) {
                     resulted.innerHTML = results;
                     document.getElementById("net-assets").innerHTML = Math.round(netasset[results]);
                     document.getElementById("net-assets").style.bolder;
@@ -1254,7 +1311,374 @@ m     dividend-yield
 
                     //document.getElementById("total-asset-FIRE").innerHTML = "";
 
+
+
+
+
+
+                const data = [];
+                const data2 = [];
+                const data3 = [];
+                const data4 = [];
+                const data5 = [];
+                const data6 = [];
+                const data7 = [];
+                const data8 = [];
+                let prev;
+                let prev2;
+                let prev3;
+                let prev4;
+                let prev5;
+                let prev6;
+                let prev7;
+                let prev8;
+                let year;
+
+                const annualincome2 = [];
+                const annualrent2 = [];
+                const annualrentFIRE2 = [];
+                const totalasset2 = [];
+                const totalassetvirtualFIRE2 = [];
+                const dividend2 = [];
+                const dividendvirtual2 = [];
+                const netasset2 = [];
+                const cashflow2 = [];
+                const cashflowreturn2 = [];
+
+                for (let i = 0; i <= 30; i++) {
+                  year = 2022 + i;
+                  annualincome2[i] = Math.round(annualincome[i]) ;
+                  annualrent2[i] = Math.round(annualrent[i]) ;
+                  annualrentFIRE2[i] = Math.round(annualrentFIRE[i]) ;
+                  totalasset2[i] = Math.round(totalasset[i]) ;
+                  totalassetvirtualFIRE2[i] = Math.round(totalassetvirtualFIRE[i]) ;
+                  dividend2[i] = Math.round(dividend[i]) ;
+                  dividendvirtual2[i] = Math.round(dividendvirtual[i]) ;
+                  netasset2[i] = Math.round(netasset[i]) ;
+                  cashflowreturn2[i] = Math.round(cashflowreturn[i]) ;
+                  }
+
+
+                for (let i = 0; i <= 30; i++) {
+                  year = 2022 + i;
+
+                  prev = annualincome2[i];
+                  data.push({x: year, y: prev});
+                  prev2 = annualrent2[i];
+                  data2.push({x: year, y: prev2});
+                  prev3 = annualrentFIRE2[i];
+                  data3.push({x: year, y: prev3});
+                  prev4 = totalasset2[i];
+                  data4.push({x: year, y: prev4});
+                  prev5 = totalassetvirtualFIRE2[i];
+                  data5.push({x: year, y: prev5});
+                  prev6 = dividend2[i];
+                  data6.push({x: year, y: prev6});
+/*
+                  prev7 = dividendvirtual2[i];
+                  data7.push({x: year, y: prev7});
+*/
+                  prev7 = cashflowreturn2[i];
+                  data7.push({x: year, y: prev7});
+                  prev8 = netasset2[i];
+                  data8.push({x: year, y: prev8});
+
+/*
+                  prev9 = cashflow2[i];
+                  data9.push({x: year, y: prev9});
+don't work. limit is 9?
+*/
+                  }
+
+                const totalDuration = 2000;
+                const delayBetweenPoints = totalDuration / data.length;
+
+
+                const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+
+
+//                myChart.destroy();
+
+                var ctx = document.getElementById('myChart').getContext('2d');
+//                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+/*
+                ctx.fillStyle = 'blue';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+filling color don't work
+*/
+                var myChart = new Chart(ctx, {
+
+
+                  type: 'line',
+                  data: {
+                    datasets: [{
+                      label: 'Netasset',
+                      borderColor: 'Navy',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data8,
+                    },
+                    {
+                      label: 'Dividend',
+                      borderColor: 'Green',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data6,
+                    },
+                    {
+                      label: 'Returns from Invest + Income - Cost',
+                      borderColor: 'black',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data7,
+                    }]
+                  },  //data
+                  options: {
+    //                responsive: false;
+                    animation: {
+                        x: {
+                            type: 'number',
+                            easing: 'linear',
+                            duration: delayBetweenPoints,
+                            from: NaN, // the point is initially skipped
+                            delay(ctx) {
+                              if (ctx.type !== 'data' || ctx.xStarted) {
+                                return 0;
+                              }
+                              ctx.xStarted = true;
+                              return ctx.index * delayBetweenPoints;
+                            }
+                        },  //x
+                        y: {
+                            type: 'number',
+                            easing: 'linear',
+                            duration: delayBetweenPoints,
+                            from: previousY,
+                            delay(ctx) {
+                              if (ctx.type !== 'data' || ctx.yStarted) {
+                                return 0;
+                              }
+                              ctx.yStarted = true;
+                              return ctx.index * delayBetweenPoints;
+                            }
+                        }  //y
+                    }, //animation
+                    interaction: {
+                      intersect: false
+                    },
+                    plugins: {
+                      legend: false      //Legend enabling...
+                    },
+                    scales: {
+                      x: {
+                        type: 'linear'  //linear 'log'
+
+                      },
+                      y: {
+                        suggestedMin: 0,
+                        suggestedMax: netasset[70], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
+                      }
+                    } //scales
+                  } //options
+                }); //mychart
+
+
+
+
+
+/* 1st graph start. to use this, renaming variables is required
+                var myChart = new Chart(ctx, {
+
+
+                  type: 'line',
+                  data: {
+                    datasets: [{
+                      label: 'annualincome',
+                      borderColor: 'red',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data,
+                    },
+                    {
+                      label: 'annualrent',
+                      borderColor: 'blue',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data2,
+                    },
+                    {
+                      label: 'annualrentFIRE',
+                      borderColor: 'yellow',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data3,
+                    },
+                    {
+                      label: 'dividend',
+                      borderColor: 'pink',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data6,
+                    },
+                    {
+                      label: 'dividendvirtual',
+                      borderColor: 'pink',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data7,
+                    }]
+                  },  //data
+                  options: {
+    //                responsive: false;
+                    animation: {
+                        x: {
+                            type: 'number',
+                            easing: 'linear',
+                            duration: delayBetweenPoints,
+                            from: NaN, // the point is initially skipped
+                            delay(ctx) {
+                              if (ctx.type !== 'data' || ctx.xStarted) {
+                                return 0;
+                              }
+                              ctx.xStarted = true;
+                              return ctx.index * delayBetweenPoints;
+                            }
+                        },  //x
+                        y: {
+                            type: 'number',
+                            easing: 'linear',
+                            duration: delayBetweenPoints,
+                            from: previousY,
+                            delay(ctx) {
+                              if (ctx.type !== 'data' || ctx.yStarted) {
+                                return 0;
+                              }
+                              ctx.yStarted = true;
+                              return ctx.index * delayBetweenPoints;
+                            }
+                        }  //y
+                    }, //animation
+                    interaction: {
+                      intersect: false
+                    },
+                    plugins: {
+                      legend: false      //Legend enabling...
+                    },
+                    scales: {
+                      x: {
+                        type: 'linear'  //linear 'log'
+
+                      },
+                      y: {
+                        suggestedMin: 0,
+                        suggestedMax: netasset[70], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
+                      }
+                    } //scales
+                  } //options
+                }); //mychart
+
+1st graph end   */
+
+
+
+
+
+
+
+
+
+
+/* 2nd graph start
+
+                const previousY2 = (ctx2) => ctx2.index === 0 ? ctx2.chart.scales.y.getPixelForValue(100) : ctx2.chart.getDatasetMeta(ctx2.datasetIndex).data[ctx2.index - 1].getProps(['y'], true).y;
+
+
+//                myChart.destroy();
+
+                var ctx2 = document.getElementById('myChart2').getContext('2d');
+//                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                var myChart = new Chart(ctx2, {
+
+
+                  type: 'line',
+                  data: {
+                    datasets: [{
+                      label: 'totalasset',
+                      borderColor: 'black',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data4,
+                    },
+                    {
+                      label: 'totalassetvirtualFIRE',
+                      borderColor: 'pink',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data5,
+                    },
+                    {
+                      label: 'netasset',
+                      borderColor: 'pink',
+                      borderWidth: 1,
+                      radius: 0,
+                      data: data8,
+                    }]
+                  },  //data
+                  options: {
+    //                responsive: false;
+                    animation: {
+                        x: {
+                            type: 'number',
+                            easing: 'linear',
+                            duration: delayBetweenPoints,
+                            from: NaN, // the point is initially skipped
+                            delay(ctx2) {
+                              if (ctx2.type !== 'data' || ctx2.xStarted) {
+                                return 0;
+                              }
+                              ctx2.xStarted = true;
+                              return ctx2.index * delayBetweenPoints;
+                            }
+                        },  //x
+                        y: {
+                            type: 'number',
+                            easing: 'linear',
+                            duration: delayBetweenPoints,
+                            from: previousY,
+                            delay(ctx2) {
+                              if (ctx2.type !== 'data' || ctx2.yStarted) {
+                                return 0;
+                              }
+                              ctx2.yStarted = true;
+                              return ctx2.index * delayBetweenPoints;
+                            }
+                        }  //y
+                    }, //animation
+                    interaction: {
+                      intersect: false
+                    },
+                    plugins: {
+                      legend: false      //Legend enabling...
+                    },
+                    scales: {
+                      x: {
+                        type: 'linear'  //linear 'log'
+
+                      },
+                      y: {
+                        suggestedMin: 0,
+                        suggestedMax: netasset[70], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
+                      }
+                    } //scales
+                  } //options
+                }); //mychart
+
+2nd graph */
+
                 }  // function end
+
+
         </script>
 
     </body>

@@ -619,8 +619,7 @@
       <div class = "divD01">
         <select id="cashratio">
 
-<!--      <option value="ignorecash">Don't care condition2/option>      -->
-
+          <option value="ignorecash">Don't care cash held</option>
           <option value="0%">0%</option>
           <option value="5%">5%</option>
           <option value="10%">10%</option>
@@ -924,8 +923,11 @@
                let count=0;
 
                var a, b, c, e, f, g, h, j, k, l, m, loanrate, netasset, interestexpense, cashflow, results;
-               var cashratio;
-               cashratio =  parseInt(document.getElementById("cashratio").value);
+               var cashrat;
+
+               cashrat =  parseInt(document.getElementById("cashratio").value)*0.01;
+
+//               cashrat =  document.getElementById("cashratio").value;
                a = parseInt(document.getElementById("total-asset").value);
                b = parseInt(document.getElementById("total-liability").value);
                c = parseInt(document.getElementById("price-house-deposit").value);
@@ -1214,13 +1216,13 @@ m     dividend-yield
 
                   var increaseofreturnsvirtualFIRE;
 
-//here importanat
+
                   if(kk == 0) {
                       totalassetvirtualFIRE[jj] = netasset[jj] + b - pricehousedepositvirtualFIRE[jj] ;
                       returnsvirtualFIRE[jj] = totalassetvirtualFIRE[jj] * l;
                       costliving [jj+1] = costliving[jj] * (1 + k);
 
-                      cashvirtual[jj] = totalassetvirtualFIRE[jj] * cashratio ;
+                      cashvirtual[jj] = totalassetvirtualFIRE[jj] * cashrat ;
 
                       dividendvirtual [jj] = totalassetvirtualFIRE[jj] * m;
                       dividendvirtual [jj+1] = dividendvirtual [jj] * (1+l-m);
@@ -1231,23 +1233,55 @@ m     dividend-yield
                   }
 
                       while(kk == 0 ){
-//here importanat
-                        if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense)) && ((cashvirtual[jj] + dividendvirtual [jj] + dividendvirtual [jj+1]) >= (costliving [jj] + costliving [jj+1]  + annualrentvirtualFIRE[jj] + annualrentvirtualFIRE[jj+1] + interestexpense * 2))) {
 
-                          results = jj;
+                        if(document.getElementById("cashratio").value == "ignorecash"){   // if(cashrat == "ignorecash")  --> don't work..
+//                                  alert("do work. ==");
+                                  if(jj == 0){
+                                      alert(cashrat);
+                                  }
+                                  if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense))) {
 
-                          annualincome[jj] = 0;
-                          annualrent[jj] = 0;
-                          pricehousedeposit[jj] = 0;
-                          pricehousedeposit[jj+1] = 0;
+                                          results = jj;
 
-                          annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
-                          pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
+                                          annualincome[jj] = 0;
+                                          annualrent[jj] = 0;
+                                          pricehousedeposit[jj] = 0;
+                                          pricehousedeposit[jj+1] = 0;
 
-                          totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+                                          annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
+                                          pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
 
-                          kk = 1;
-                        }  //if end
+                                          totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+
+                                          kk = 1;
+                                        }
+                        }  //cashrati if. or else
+
+                        if(document.getElementById("cashratio").value != "ignorecash"){
+
+//                                  alert("do work. !=");
+                                  if(jj==0){
+                                      alert(cashrat);
+                                  }
+                                  if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense)) && ((cashvirtual[jj] + dividendvirtual [jj] + dividendvirtual [jj+1]) >= (costliving [jj] + costliving [jj+1]  + annualrentvirtualFIRE[jj] + annualrentvirtualFIRE[jj+1] + interestexpense * 2))) {
+
+                                          results = jj;
+
+                                          annualincome[jj] = 0;
+                                          annualrent[jj] = 0;
+                                          pricehousedeposit[jj] = 0;
+                                          pricehousedeposit[jj+1] = 0;
+
+                                          annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
+                                          pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
+
+                                          totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+
+                                          kk = 1;
+                                        }
+                          } //cashrati if
+
+
                         break;
                       }  // while end
 
@@ -1261,13 +1295,13 @@ m     dividend-yield
                             pricehousedeposit[jj+1] = 0;
                             if(selectvalueFIRE == "ownership") {
                                 annualrentFIRE[jj] = 0;
-//필요없이 에러만 만들어냄        pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] * (1 + k);
+//                              pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] * (1 + k);
                                 pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] * (1 + k);
                             }
 
                             if(selectvalueFIRE == "renting") {
                                   annualrentFIRE[jj+1] = annualrentFIRE[jj] * (1 + k);
-//필요없이 에러만 만들어냄          pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] ;
+//                                 pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] ;
                                   pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] ;
                               }
                       }
@@ -1289,7 +1323,6 @@ m     dividend-yield
 
                       netasset[jj+1] =  totalasset[jj+1] - b + pricehousedeposit[jj+1] + pricehousedepositFIRE[jj+1];
 
-
                   } // for end
 
 
@@ -1298,18 +1331,18 @@ m     dividend-yield
                   resulted.style.color="SteelBlue";
                   resulted.style.bolder;
                   if(results == 100) {
-                  resulted.innerHTML = "";   //kk는 0으로 나오는데... annualrentFIRE가 계속 증가한단 말이지..
-                    document.getElementById("net-assets").innerHTML = "";
-                    alert("I'm sorry you can't retire in 30 years as this condition.\n Adjust the conditions and try again!");
+                      resulted.innerHTML = "";
+                      document.getElementById("net-assets").innerHTML = "";
+                      alert("I'm sorry you can't retire in 30 years as this condition.\n Adjust the conditions and try again!");
                   }
                   if(results != 100) {
-                    resulted.innerHTML = results;
-                    document.getElementById("net-assets").innerHTML = Math.round(netasset[results]);
-                    document.getElementById("net-assets").style.bolder;
-                    document.getElementById("net-assets").style.color="OliveDrab";
+                      resulted.innerHTML = results;
+                      document.getElementById("net-assets").innerHTML = Math.round(netasset[results]);
+                      document.getElementById("net-assets").style.bolder;
+                      document.getElementById("net-assets").style.color="OliveDrab";
                   }
 
-                }   // count if end
+
 
 
                     //document.getElementById("total-asset-FIRE").innerHTML = "";
@@ -1418,7 +1451,6 @@ don't work. limit is 9?
 
 
                 var myChart = new Chart(ctx, {
-
 
                   type: 'line',
                   data: {
@@ -1595,17 +1627,9 @@ don't work. limit is 9?
 
 
 
-
-
-
-
-
-
-
 /* 2nd graph start
 
                 const previousY2 = (ctx2) => ctx2.index === 0 ? ctx2.chart.scales.y.getPixelForValue(100) : ctx2.chart.getDatasetMeta(ctx2.datasetIndex).data[ctx2.index - 1].getProps(['y'], true).y;
-
 
 //                myChart.destroy();
 
@@ -1688,8 +1712,8 @@ don't work. limit is 9?
                 }); //mychart
 
 2nd graph */
-
-                }  // function end
+                }   // if of count end
+            }  // function end
 
 
         </script>

@@ -614,7 +614,7 @@
 
 
       <div class = "divD1">
-      <h4 class="cashrati">Select cash ratio</h4>
+      <h4 class="cashrati"><label for="cashratio">Select cash ratio</label></h4>
       </div>
       <div class = "divD01">
         <select id="cashratio">
@@ -654,8 +654,8 @@
 
       </div>
       <div class = "divD11">
-      <h4 style="color:blue;">Choose the current</h4>
-      <h4>way of living</h4>
+      <h4 style="color:blue;"><label for="selectvalue">Choose the current</label></h4>
+      <h4><label for="selectvalue">way of living</label></h4>
     </div>
 
       <div class = "divD12">
@@ -726,8 +726,8 @@
   </div>
 
   <div class = "divD31">
-  <h4 style="color:blue;">Select the desired </h4>
-    <h4>way of living</h4>
+  <h4 style="color:blue;"><label for="selectvalueFIRE">Select the desired</label></h4>
+    <h4><label for="selectvalueFIRE">way of living</label></h4>
   </div>
 
   <div class = "divD32">
@@ -817,11 +817,12 @@
             <h2  align= "left" id="net-assets"> </h2>
         </div>
         <div class="divh4">
-          <h4 >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp After calculating, a finance graph will be shown. If you retry, please refresh this page and use. We are improving it...</h4>
+          <h4 >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp After calculating, a finance graph will be shown. If you retry and want to redraw, please refresh this page and use it. We are improving redrawing...</h4>
         </div>
 
         <div class="chartBox">
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart1"></canvas>
+        <canvas id="myChart2"></canvas>
         </div>
 
 <!--
@@ -899,6 +900,7 @@
 
         <script type = "text/javascript">
 
+               let jjj = 0;
 
 //<p>diviend yield from investment(post tax)  <input type="text" style="text-align: right; padding-right: 10px;" id="diviend-yield" onKeyUp="removeChar(event); inputNumberFormat(this);" onKeyDown="inputNumberFormat(this);" size >  %</p>
 
@@ -924,9 +926,9 @@
 
           document.getElementById("Click-me").onclick = function() {
                let count=0;
-
                var a, b, c, e, f, g, h, j, k, l, m, loanrate, netasset, interestexpense, cashflow, results;
                var cashrat;
+
 
                cashrat =  parseInt(document.getElementById("cashratio").value)*0.01;
 
@@ -1345,381 +1347,509 @@ m     dividend-yield
                       document.getElementById("net-assets").style.color="OliveDrab";
                   }
 
+                 alert("jjj" + jjj);
+
+/*
+//////////////////////////////////////////////////////////////
+//    https://stackoverflow.com/questions/40056555/destroy-chart-js-bar-graph-to-redraw-other-graph-in-same-canvas
+
+
+                      var graphbtn = document.getElementById("mychart");
+                      graphbtn.disabled = 'disabled';
+
+                      function gclaer(){
+                          for((let i = 0; i <= 30; i++){
+                              prev[i] = null ;
+                              prev2[i] = null ;
+                              prev3[i] = null ;
+                              prev4[i] = null ;
+                              prev5[i] = null ;
+                              prev6[i] = null ;
+                              prev7[i] = null ;
+                              prev8[i] = null ;
+
+                          }
+                          chart.update();
+                          chart.destroy();
+                          document.getElementById("myChart").disabled = false;
+                      }
+
+                      gclaer();
+
+////////////////////////////////////////////////////////////
+*/
+                      const data = [];
+                      const data2 = [];
+                      const data3 = [];
+                      const data4 = [];
+                      const data5 = [];
+                      const data6 = [];
+                      const data7 = [];
+                      const data8 = [];
+                      let prev;
+                      let prev2;
+                      let prev3;
+                      let prev4;
+                      let prev5;
+                      let prev6;
+                      let prev7;
+                      let prev8;
+                      let year;
+
+                      const annualincome2 = [];
+                      const annualrent2 = [];
+                      const annualrentFIRE2 = [];
+                      const totalasset2 = [];
+                      const totalassetvirtualFIRE2 = [];
+                      const dividend2 = [];
+                      const dividendvirtual2 = [];
+                      const netasset2 = [];
+                      const cashflow2 = [];
+                      const cashflowreturn2 = [];
+
+
+//                      myChart.destroy();
+
+/*
+                      if(jjj >=1){
 
 
 
-                    //document.getElementById("total-asset-FIRE").innerHTML = "";
+                        while(mychart.data.datasets.data8.length > 0){
+                            mychart.data.datasets.data8.pop();
+                            alert(mychart.data.datasets.data8.length);
+                        }
+                        while(mychart.data.datasets.data6.length > 0)
+                            mychart.data.datasets.data6.pop();
+                        while(mychart.data.datasets.data7.length > 0)
+                            mychart.data.datasets.data7.pop();
+
+
+
+
+                      while(mychart['data']['datasets'][data8].length > 0){
+                          mychart['data']['datasets'][data8].pop();
+                          alert(mychart['data']['datasets'][data8].length);
+                      }
+                      while(mychart['data']['datasets'][data6].length > 0)
+                          mychart['data']['datasets'][data6].pop();
+                      while(mychart['data']['datasets'][data7].length > 0)
+                          mychart['data']['datasets'][data7].pop();
+
+                      }
+*/
+
+/*
+                      for(let key of gChartData.keys()) {
+                          var chart = gChartData.get(key);
+                          drawChart(key, chart.labels, $.extend(true, {}, chart.data), chart.chartOptions);
+                      }
+*/
+
+
+                      for (let i = 0; i <= 30; i++) {
+                        year = 2022 + i;
+                        annualincome2[i] = Math.round(annualincome[i]) //.toLocaleString('en-GB'); entering this sentence or not, nothins changes
+                        annualrent2[i] = Math.round(annualrent[i]) ;
+                        annualrentFIRE2[i] = Math.round(annualrentFIRE[i]) ;
+                        totalasset2[i] = Math.round(totalasset[i]) ;
+                        totalassetvirtualFIRE2[i] = Math.round(totalassetvirtualFIRE[i]) ;
+                        dividend2[i] = Math.round(dividend[i]) ;
+                        dividendvirtual2[i] = Math.round(dividendvirtual[i]) ;
+                        netasset2[i] = Math.round(netasset[i]) ;
+                        cashflowreturn2[i] = Math.round(cashflowreturn[i]) ;
+                        }
+
+/*
+                      let chartStatus = chart.getchart("mychart");
+                      if(chartStatus !=undefined) {
+                        chartStatus.destroy();
+                      }
+*/
+
+                      for (let i = 0; i <= 30; i++) {
+                        year = 2022 + i;
+
+                        prev = annualincome2[i];
+                        data.push({x: year, y: prev});
+                        prev2 = annualrent2[i];
+                        data2.push({x: year, y: prev2});
+                        prev3 = annualrentFIRE2[i];
+                        data3.push({x: year, y: prev3});
+                        prev4 = totalasset2[i];
+                        data4.push({x: year, y: prev4});
+                        prev5 = totalassetvirtualFIRE2[i];
+                        data5.push({x: year, y: prev5});
+                        prev6 = dividend2[i];
+                        data6.push({x: year, y: prev6});
+                        prev7 = cashflowreturn2[i];
+                        data7.push({x: year, y: prev7});
+                        prev8 = netasset2[i];
+                        data8.push({x: year, y: prev8});
+
+                      //   limit is 9?
+                        }
+/*
+                      if(jjj >=1){    //   function updateChart()
+                          for(let i = 0; i <= 30; i++){
+
+                              chart.data.datasets[0].dasta8 = netasset2;
+                              chart.data.datasets[0].dasta6 = dividend2;
+                              chart.data.datasets[0].dasta7 = cashflowreturn2;
+
+                              mychart['data']['datasets'][data8][i] = netasset2[i];
+                              mychart['data']['datasets'][data6][i] = dividend2[i];
+                              mychart['data']['datasets'][data7][i] = cashflowreturn2[i];
+
+                          }
+                          chart.update();
+                      }
+*/
+                        var ctx;
+
+/*
+                        function addData(chart, label, data) {
+                            chart.data.labels.push(label);
+                            chart.data.datasets.forEach((dataset) => {
+                                dataset.data.push(data);
+                            });
+                            chart.update();
+                        }
+
+                        function removeData(chart) {
+                            chart.data.labels.pop();
+                            chart.data.datasets.forEach((dataset) => {
+                                dataset.data.pop();
+                            });
+                            chart.update();
+                        }
+
+adding or removing data in chart.js
+*/
+
+/*
+                        if(jjj >=1){
+                            removeData(mychart);
+                            addData(mychart, Netasset, netasset2);
+                            addData(mychart, Dividend, Dividend2);
+                            addData(mychart, Returns from Invest + Income - Cost, cashflowreturn2);
+
+                        }
+
+                        function addData(chart, label, data); {
+                              chart.data.labels.push(label);
+                              chart.data.datasets.forEach((dataset) => {
+                                  dataset.data.push(data);
+                              });
+                              chart.update();
+                        }
+
+                        function removeData(chart){
+
+                          while(mychart['data']['datasets'][data8].length > 0){
+                              mychart['data']['datasets'][data8].pop();
+                              alert(mychart['data']['datasets'][data8].length);
+                          }
+                          while(mychart['data']['datasets'][data6].length > 0)
+                              mychart['data']['datasets'][data6].pop();
+                          while(mychart['data']['datasets'][data7].length > 0)
+                              mychart['data']['datasets'][data7].pop();
+
+
+
+                              chart.data.labels.pop();
+                              chart.data.datasets.forEach((dataset) => {
+                                  dataset.data.pop();
+                              });
+                              chart.update();
+                        }
+
+*/
 
 
 
 
 
-                const data = [];
-                const data2 = [];
-                const data3 = [];
-                const data4 = [];
-                const data5 = [];
-                const data6 = [];
-                const data7 = [];
-                const data8 = [];
-                let prev;
-                let prev2;
-                let prev3;
-                let prev4;
-                let prev5;
-                let prev6;
-                let prev7;
-                let prev8;
-                let year;
+                      // doing this, don't draw                  ctx.clearRect(0,0,document.getElementById('myChart').width, document.getElementById('myChart').height);
 
-                const annualincome2 = [];
-                const annualrent2 = [];
-                const annualrentFIRE2 = [];
-                const totalasset2 = [];
-                const totalassetvirtualFIRE2 = [];
-                const dividend2 = [];
-                const dividendvirtual2 = [];
-                const netasset2 = [];
-                const cashflow2 = [];
-                const cashflowreturn2 = [];
 
-                for (let i = 0; i <= 30; i++) {
-                  year = 2022 + i;
-                  annualincome2[i] = Math.round(annualincome[i]) ;
-                  annualrent2[i] = Math.round(annualrent[i]) ;
-                  annualrentFIRE2[i] = Math.round(annualrentFIRE[i]) ;
-                  totalasset2[i] = Math.round(totalasset[i]) ;
-                  totalassetvirtualFIRE2[i] = Math.round(totalassetvirtualFIRE[i]) ;
-                  dividend2[i] = Math.round(dividend[i]) ;
-                  dividendvirtual2[i] = Math.round(dividendvirtual[i]) ;
-                  netasset2[i] = Math.round(netasset[i]) ;
-                  cashflowreturn2[i] = Math.round(cashflowreturn[i]) ;
+
+                      const totalDuration = 2000;
+                      const delayBetweenPoints = totalDuration / data.length;
+
+                      const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+
+
+                      if(jjj == 0){
+                        ctx = document.getElementById('myChart1').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                          type: 'line',
+                          data: {
+                            labels: ['Netasset', 'Dividend', 'Returns from Invest + Income - Cost'],
+                            datasets: [{
+                              label: 'Netasset',
+                              borderColor: 'Navy',
+                        //                      backgroundColor: '',
+                              borderWidth: 1,
+                              radius: 0,
+                              data: data8,
+                            },
+                            {
+                              label: 'Dividend',
+                              borderColor: 'Green',
+                              borderWidth: 1,
+                              radius: 0,
+                              data: data6,
+                            },
+                            {
+                              label: 'Returns from Invest + Income - Cost',
+                              borderColor: 'black',
+                              borderWidth: 1,
+                              radius: 0,
+                              data: data7,
+                            }]
+                          },  //data
+                          options: {
+                        //                responsive: false;
+                            animation: {
+                                x: {
+                                    type: 'number',
+                                    easing: 'linear',
+                                    duration: delayBetweenPoints,
+                                    from: NaN, // the point is initially skipped
+                                    delay(ctx) {
+                                      if (ctx.type !== 'data' || ctx.xStarted) {
+                                        return 0;
+                                      }
+                                      ctx.xStarted = true;
+                                      return ctx.index * delayBetweenPoints;
+                                    }
+                                },  //x
+                                y: {
+                                    type: 'number',
+                                    easing: 'linear',
+                                    duration: delayBetweenPoints,
+                                    from: previousY,
+                                    delay(ctx) {
+                                      if (ctx.type !== 'data' || ctx.yStarted) {
+                                        return 0;
+                                      }
+                                      ctx.yStarted = true;
+                                      return ctx.index * delayBetweenPoints;
+                                    }
+                                }  //y
+                            }, //animation
+                            interaction: {
+                              intersect: false
+                            },
+                            plugins: {
+                              legend: false      //Legend enabling...
+                            },
+                            scales: {
+                              x: {
+                                beginAtZero: true,
+                                min: 2022,
+                                max: 2052,
+                                type: 'linear'  //linear 'log'
+
+                              },
+                              y: {
+                                suggestedMin: 0,
+                                suggestedMax: netasset[30], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
+                              }
+                            } //scales
+                          } //options
+                        }); // mychart1 at jjj ==0
+
+
+
+                              if((jjj != 0)&&(jjj % 2) == 0){
+
+                                myChart2.destroy();
+
+                              ctx = document.getElementById('myChart1').getContext('2d');
+
+                              var myChart = new Chart(ctx, {
+
+                                type: 'line',
+                                data: {
+                                  labels: ['Netasset', 'Dividend', 'Returns from Invest + Income - Cost'],
+                                  datasets: [{
+                                    label: 'Netasset',
+                                    borderColor: 'Navy',
+                              //                      backgroundColor: '',
+                                    borderWidth: 1,
+                                    radius: 0,
+                                    data: data8,
+                                  },
+                                  {
+                                    label: 'Dividend',
+                                    borderColor: 'Green',
+                                    borderWidth: 1,
+                                    radius: 0,
+                                    data: data6,
+                                  },
+                                  {
+                                    label: 'Returns from Invest + Income - Cost',
+                                    borderColor: 'black',
+                                    borderWidth: 1,
+                                    radius: 0,
+                                    data: data7,
+                                  }]
+                                },  //data
+                                options: {
+                              //                responsive: false;
+                                  animation: {
+                                      x: {
+                                          type: 'number',
+                                          easing: 'linear',
+                                          duration: delayBetweenPoints,
+                                          from: NaN, // the point is initially skipped
+                                          delay(ctx) {
+                                            if (ctx.type !== 'data' || ctx.xStarted) {
+                                              return 0;
+                                            }
+                                            ctx.xStarted = true;
+                                            return ctx.index * delayBetweenPoints;
+                                          }
+                                      },  //x
+                                      y: {
+                                          type: 'number',
+                                          easing: 'linear',
+                                          duration: delayBetweenPoints,
+                                          from: previousY,
+                                          delay(ctx) {
+                                            if (ctx.type !== 'data' || ctx.yStarted) {
+                                              return 0;
+                                            }
+                                            ctx.yStarted = true;
+                                            return ctx.index * delayBetweenPoints;
+                                          }
+                                      }  //y
+                                  }, //animation
+                                  interaction: {
+                                    intersect: false
+                                  },
+                                  plugins: {
+                                    legend: false      //Legend enabling...
+                                  },
+                                  scales: {
+                                    x: {
+                                      beginAtZero: true,
+                                      min: 2022,
+                                      max: 2052,
+                                      type: 'linear'  //linear 'log'
+
+                                    },
+                                    y: {
+                                      suggestedMin: 0,
+                                      suggestedMax: netasset[30], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
+                                    }
+                                  } //scales
+                                } //options
+                              }); //mychart1
+                            }  // if(jjj % 2)
                   }
 
 
-                for (let i = 0; i <= 30; i++) {
-                  year = 2022 + i;
+                    if((jjj % 2) == 1){
 
-                  prev = annualincome2[i];
-                  data.push({x: year, y: prev});
-                  prev2 = annualrent2[i];
-                  data2.push({x: year, y: prev2});
-                  prev3 = annualrentFIRE2[i];
-                  data3.push({x: year, y: prev3});
-                  prev4 = totalasset2[i];
-                  data4.push({x: year, y: prev4});
-                  prev5 = totalassetvirtualFIRE2[i];
-                  data5.push({x: year, y: prev5});
-                  prev6 = dividend2[i];
-                  data6.push({x: year, y: prev6});
-/*
-                  prev7 = dividendvirtual2[i];
-                  data7.push({x: year, y: prev7});
-*/
-                  prev7 = cashflowreturn2[i];
-                  data7.push({x: year, y: prev7});
-                  prev8 = netasset2[i];
-                  data8.push({x: year, y: prev8});
+                    myChart1.destroy();
+                    ctx = document.getElementById('myChart2').getContext('2d');
 
-/*
-                  prev9 = cashflow2[i];
-                  data9.push({x: year, y: prev9});
-don't work. limit is 9?
-*/
-                  }
+                    var myChart = new Chart(ctx, {
 
-                  var ctx;
+                      type: 'line',
+                      data: {
+                        labels: ['Netasset', 'Dividend', 'Returns from Invest + Income - Cost'],
+                        datasets: [{
+                          label: 'Netasset',
+                          borderColor: 'Navy',
+                    //                      backgroundColor: '',
+                          borderWidth: 1,
+                          radius: 0,
+                          data: data8,
+                        },
+                        {
+                          label: 'Dividend',
+                          borderColor: 'Green',
+                          borderWidth: 1,
+                          radius: 0,
+                          data: data6,
+                        },
+                        {
+                          label: 'Returns from Invest + Income - Cost',
+                          borderColor: 'black',
+                          borderWidth: 1,
+                          radius: 0,
+                          data: data7,
+                        }]
+                      },  //data
+                      options: {
+                    //                responsive: false;
+                        animation: {
+                            x: {
+                                type: 'number',
+                                easing: 'linear',
+                                duration: delayBetweenPoints,
+                                from: NaN, // the point is initially skipped
+                                delay(ctx) {
+                                  if (ctx.type !== 'data' || ctx.xStarted) {
+                                    return 0;
+                                  }
+                                  ctx.xStarted = true;
+                                  return ctx.index * delayBetweenPoints;
+                                }
+                            },  //x
+                            y: {
+                                type: 'number',
+                                easing: 'linear',
+                                duration: delayBetweenPoints,
+                                from: previousY,
+                                delay(ctx) {
+                                  if (ctx.type !== 'data' || ctx.yStarted) {
+                                    return 0;
+                                  }
+                                  ctx.yStarted = true;
+                                  return ctx.index * delayBetweenPoints;
+                                }
+                            }  //y
+                        }, //animation
+                        interaction: {
+                          intersect: false
+                        },
+                        plugins: {
+                          legend: false      //Legend enabling...
+                        },
+                        scales: {
+                          x: {
+                            beginAtZero: true,
+                            min: 2022,
+                            max: 2052,
+                            type: 'linear'  //linear 'log'
 
-// doing this, don't draw                  ctx.clearRect(0,0,document.getElementById('myChart').width, document.getElementById('myChart').height);
+                          },
+                          y: {
+                            suggestedMin: 0,
+                            suggestedMax: netasset[30], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
+                          }
+                        } //scales
+                      } //options
+                    }); //mychart2
+                  }  // if(jjj % 2)
+
+                  alert(jjj);  //canvas work only one time...
 
 
-
-                const totalDuration = 2000;
-                const delayBetweenPoints = totalDuration / data.length;
-
-                const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
-
-
-//                myChart.destroy();
-
-                ctx = document.getElementById('myChart').getContext('2d');
-//                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-
-//                ctx.fillStyle = 'blue';   // ctx.strokeStyle = "blue";
-//                ctx.fillRect(0, 0, 600, 300);  // ctx.strokeRect(,,,);
-//                ctx.lneWidth = 4;
-// filling color work after calculating
-
-
-
-                var myChart = new Chart(ctx, {
-
-                  type: 'line',
-                  data: {
-                    labels: ['Netasset', 'Dividend', 'Returns from Invest + Income - Cost'],
-                    datasets: [{
-                      label: 'Netasset',
-                      borderColor: 'Navy',
-//                      backgroundColor: '',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data8,
-                    },
-                    {
-                      label: 'Dividend',
-                      borderColor: 'Green',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data6,
-                    },
-                    {
-                      label: 'Returns from Invest + Income - Cost',
-                      borderColor: 'black',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data7,
-                    }]
-                  },  //data
-                  options: {
-    //                responsive: false;
-                    animation: {
-                        x: {
-                            type: 'number',
-                            easing: 'linear',
-                            duration: delayBetweenPoints,
-                            from: NaN, // the point is initially skipped
-                            delay(ctx) {
-                              if (ctx.type !== 'data' || ctx.xStarted) {
-                                return 0;
-                              }
-                              ctx.xStarted = true;
-                              return ctx.index * delayBetweenPoints;
-                            }
-                        },  //x
-                        y: {
-                            type: 'number',
-                            easing: 'linear',
-                            duration: delayBetweenPoints,
-                            from: previousY,
-                            delay(ctx) {
-                              if (ctx.type !== 'data' || ctx.yStarted) {
-                                return 0;
-                              }
-                              ctx.yStarted = true;
-                              return ctx.index * delayBetweenPoints;
-                            }
-                        }  //y
-                    }, //animation
-                    interaction: {
-                      intersect: false
-                    },
-                    plugins: {
-                      legend: false      //Legend enabling...
-                    },
-                    scales: {
-                      x: {
-                        beginAtZero: true,
-                        min: 2022,
-                        max: 2052,
-                        type: 'linear'  //linear 'log'
-
-                      },
-                      y: {
-                        suggestedMin: 0,
-                        suggestedMax: netasset[30], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
-                      }
-                    } //scales
-                  } //options
-                }); //mychart
+                      jjj = jjj + 1;
 
 
 
 
 
-/* 1st graph start. to use this, renaming variables is required
-                var myChart = new Chart(ctx, {
-
-
-                  type: 'line',
-                  data: {
-                    datasets: [{
-                      label: 'annualincome',
-                      borderColor: 'red',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data,
-                    },
-                    {
-                      label: 'annualrent',
-                      borderColor: 'blue',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data2,
-                    },
-                    {
-                      label: 'annualrentFIRE',
-                      borderColor: 'yellow',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data3,
-                    },
-                    {
-                      label: 'dividend',
-                      borderColor: 'pink',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data6,
-                    },
-                    {
-                      label: 'dividendvirtual',
-                      borderColor: 'pink',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data7,
-                    }]
-                  },  //data
-                  options: {
-    //                responsive: false;
-                    animation: {
-                        x: {
-                            type: 'number',
-                            easing: 'linear',
-                            duration: delayBetweenPoints,
-                            from: NaN, // the point is initially skipped
-                            delay(ctx) {
-                              if (ctx.type !== 'data' || ctx.xStarted) {
-                                return 0;
-                              }
-                              ctx.xStarted = true;
-                              return ctx.index * delayBetweenPoints;
-                            }
-                        },  //x
-                        y: {
-                            type: 'number',
-                            easing: 'linear',
-                            duration: delayBetweenPoints,
-                            from: previousY,
-                            delay(ctx) {
-                              if (ctx.type !== 'data' || ctx.yStarted) {
-                                return 0;
-                              }
-                              ctx.yStarted = true;
-                              return ctx.index * delayBetweenPoints;
-                            }
-                        }  //y
-                    }, //animation
-                    interaction: {
-                      intersect: false
-                    },
-                    plugins: {
-                      legend: false      //Legend enabling...
-                    },
-                    scales: {
-                      x: {
-                        type: 'linear'  //linear 'log'
-
-                      },
-                      y: {
-                        suggestedMin: 0,
-                        suggestedMax: netasset[70], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
-                      }
-                    } //scales
-                  } //options
-                }); //mychart
-
-1st graph end   */
-
-
-
-/* 2nd graph start
-
-                const previousY2 = (ctx2) => ctx2.index === 0 ? ctx2.chart.scales.y.getPixelForValue(100) : ctx2.chart.getDatasetMeta(ctx2.datasetIndex).data[ctx2.index - 1].getProps(['y'], true).y;
-
-//                myChart.destroy();
-
-                var ctx2 = document.getElementById('myChart2').getContext('2d');
-//                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                var myChart = new Chart(ctx2, {
-
-
-                  type: 'line',
-                  data: {
-                    datasets: [{
-                      label: 'totalasset',
-                      borderColor: 'black',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data4,
-                    },
-                    {
-                      label: 'totalassetvirtualFIRE',
-                      borderColor: 'pink',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data5,
-                    },
-                    {
-                      label: 'netasset',
-                      borderColor: 'pink',
-                      borderWidth: 1,
-                      radius: 0,
-                      data: data8,
-                    }]
-                  },  //data
-                  options: {
-    //                responsive: false;
-                    animation: {
-                        x: {
-                            type: 'number',
-                            easing: 'linear',
-                            duration: delayBetweenPoints,
-                            from: NaN, // the point is initially skipped
-                            delay(ctx2) {
-                              if (ctx2.type !== 'data' || ctx2.xStarted) {
-                                return 0;
-                              }
-                              ctx2.xStarted = true;
-                              return ctx2.index * delayBetweenPoints;
-                            }
-                        },  //x
-                        y: {
-                            type: 'number',
-                            easing: 'linear',
-                            duration: delayBetweenPoints,
-                            from: previousY,
-                            delay(ctx2) {
-                              if (ctx2.type !== 'data' || ctx2.yStarted) {
-                                return 0;
-                              }
-                              ctx2.yStarted = true;
-                              return ctx2.index * delayBetweenPoints;
-                            }
-                        }  //y
-                    }, //animation
-                    interaction: {
-                      intersect: false
-                    },
-                    plugins: {
-                      legend: false      //Legend enabling...
-                    },
-                    scales: {
-                      x: {
-                        type: 'linear'  //linear 'log'
-
-                      },
-                      y: {
-                        suggestedMin: 0,
-                        suggestedMax: netasset[70], //totalasset[70], //netasset[70],  으로하면 됐다, 안됐다 함
-                      }
-                    } //scales
-                  } //options
-                }); //mychart
-
-2nd graph */
                 }   // if of count end
-            }  // function end
 
+            }  // function end
 
         </script>
 

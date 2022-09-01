@@ -619,7 +619,7 @@
       <div class = "divD01">
         <select id="cashratio">
 
-          <option value="ignorecash">Don't care cash held</option>
+          <option value="ignorecash">Don't care</option>
           <option value="0%">0%</option>
           <option value="5%">5%</option>
           <option value="10%">10%</option>
@@ -821,8 +821,9 @@
         </div>
 
         <div class="chartBox">
-        <canvas id="myChart1"></canvas>
-        <canvas id="myChart2"></canvas>
+            <canvas id="myChart1"></canvas>
+            <canvas id="myChart2"></canvas>
+
         </div>
 
 <!--
@@ -900,7 +901,7 @@
 
         <script type = "text/javascript">
 
-               let jjj = 0;
+               let jjj = -1;
 
 //<p>diviend yield from investment(post tax)  <input type="text" style="text-align: right; padding-right: 10px;" id="diviend-yield" onKeyUp="removeChar(event); inputNumberFormat(this);" onKeyDown="inputNumberFormat(this);" size >  %</p>
 
@@ -1347,14 +1348,14 @@ m     dividend-yield
                       document.getElementById("net-assets").style.color="OliveDrab";
                   }
 
-                 alert("jjj" + jjj);
+//                 alert("jjj is" + " " + jjj);
 
-/*
+
 //////////////////////////////////////////////////////////////
 //    https://stackoverflow.com/questions/40056555/destroy-chart-js-bar-graph-to-redraw-other-graph-in-same-canvas
 
-
-                      var graphbtn = document.getElementById("mychart");
+/*
+                      var graphbtn = document.getElementById("myChart1");
                       graphbtn.disabled = 'disabled';
 
                       function gclaer(){
@@ -1374,10 +1375,10 @@ m     dividend-yield
                           document.getElementById("myChart").disabled = false;
                       }
 
-                      gclaer();
+  */
 
 ////////////////////////////////////////////////////////////
-*/
+
                       const data = [];
                       const data2 = [];
                       const data3 = [];
@@ -1571,16 +1572,17 @@ adding or removing data in chart.js
 
 
                       // doing this, don't draw                  ctx.clearRect(0,0,document.getElementById('myChart').width, document.getElementById('myChart').height);
-
+                    jjj = jjj + 1;
 
 
                       const totalDuration = 2000;
                       const delayBetweenPoints = totalDuration / data.length;
 
-                      const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+//                      const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
 
 
                       if(jjj == 0){
+                      const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
                         ctx = document.getElementById('myChart1').getContext('2d');
                         var myChart = new Chart(ctx, {
                           type: 'line',
@@ -1664,12 +1666,12 @@ adding or removing data in chart.js
 
 
                               if((jjj != 0)&&(jjj % 2) == 0){
+//                                gclaer();
+//                                myChart2.destroy();
+                                const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+                                ctx = document.getElementById('myChart1').getContext('2d');
 
-                                myChart2.destroy();
-
-                              ctx = document.getElementById('myChart1').getContext('2d');
-
-                              var myChart = new Chart(ctx, {
+                                var myChart = new Chart(ctx, {
 
                                 type: 'line',
                                 data: {
@@ -1753,10 +1755,10 @@ adding or removing data in chart.js
 
 
                     if((jjj % 2) == 1){
-
-                    myChart1.destroy();
+//                      gclaer();
+//                    myChart1.destroy();
                     ctx = document.getElementById('myChart2').getContext('2d');
-
+                    const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
                     var myChart = new Chart(ctx, {
 
                       type: 'line',
@@ -1838,10 +1840,10 @@ adding or removing data in chart.js
                     }); //mychart2
                   }  // if(jjj % 2)
 
-                  alert(jjj);  //canvas work only one time...
+  //                alert(jjj);  //canvas work only one time...
 
 
-                      jjj = jjj + 1;
+
 
 
 

@@ -1240,7 +1240,7 @@ m     dividend-yield
                         if(document.getElementById("cashratio").value == "ignorecash"){   // if(cashrat == "ignorecash")  --> don't work..
 //                                  alert("do work. ==");
                                   if(jj == 0){
-                                      alert(cashrat);
+//                                      alert(cashrat);
                                   }
                                   if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense))) {
 
@@ -1457,9 +1457,11 @@ don't work. limit is 9?
 
                   type: 'line',
                   data: {
+                    labels: ['Netasset', 'Dividend', 'Returns from Invest + Income - Cost'],
                     datasets: [{
                       label: 'Netasset',
                       borderColor: 'Navy',
+//                      backgroundColor: '',
                       borderWidth: 1,
                       radius: 0,
                       data: data8,

@@ -1894,7 +1894,9 @@
                                       intersect: false
                                     },
                                     plugins: {
-                                      legend: false //true
+                                      legend: {
+                                         position: 'top'
+                                      }   //legend: ture    false
                                     },
                                     scales: {
                                         x: {
@@ -1910,7 +1912,7 @@
                                           title: {
                                             display: true,
                                             text: 'Net Asset',
-                                            valueFormatString: "#,##0.##",
+    //                                        valueFormatString: "#,##0.##",
 /*                                           ticks: {
                                           	  callback: function(label, index, labels){
                                                               return label/1000;

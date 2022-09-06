@@ -1818,7 +1818,7 @@
                           if(jjj >= 1){
                             var labelss = [];
                             var datass = [];
-                            labelss[0] = 'Net Asset';
+                            labelss[0] = 'Net Asset(Left)';
                             labelss[1] = 'Dividend';
                             labelss[2] = 'Returns ± Cashflow';
                             labelss[3] = 'Income';
@@ -1845,42 +1845,46 @@
                                 myChart = new Chart(ctx, {
                                   type: 'line',
                                   data: {
-                                    labels: ['Net asset', 'Dividend', 'Returns from Invest + Income - Cost'],
+                                    labels: ['Net asset(Left)', 'Dividend', 'Returns from Invest + Income - Cost'],
                                     datasets: [{
-                                      label: 'Net Asset',
+                                      label: 'Net Asset(Left)',
                                       borderColor: 'Navy',
                                 //                      backgroundColor: '',
-                                      borderWidth: 1,
+                                      borderWidth: 2,
                                       radius: 0,
                                       data: data8,
                                     },
                                     {
                                       label: 'Dividend',
                                       borderColor: 'Green',
-                                      borderWidth: 1,
+                                      borderWidth: 2,
                                       radius: 0,
                                       data: data6,
+                                      yAxisID: 'auxaxis'
                                     },
                                     {
                                       label: 'Returns ± Cashflow',
                                       borderColor: 'Blue',
-                                      borderWidth: 1,
+                                      borderWidth: 2,
                                       radius: 0,
                                       data: data7,
+                                      yAxisID: 'auxaxis'
                                     },
                                     {
                                       label: 'Income',
                                       borderColor: 'Black',
-                                      borderWidth: 1,
+                                      borderWidth: 2,
                                       radius: 0,
                                       data: data,
+                                      yAxisID: 'auxaxis'
                                     },
                                     {
                                       label: 'Rent',
                                       borderColor: 'MediumPurple',
-                                      borderWidth: 1,
+                                      borderWidth: 2,
                                       radius: 0,
                                       data: data4,
+                                      yAxisID: 'auxaxis'
                                     }]
                                   },  //data
                                   options: {
@@ -1893,17 +1897,30 @@
                                       legend: true      //Legend enabling...
                                     },
                                     scales: {
-                                      x: {
-                                        beginAtZero: true,
-                                        min: year0,
-                                        max: year0+30,
-                                        type: 'linear'  //linear 'log'
+                                        x: {
+                                          beginAtZero: true,
+                                          min: year0,
+                                          max: year0+30,
+                                          type: 'linear'  //linear 'log'
+                                        },
+                                        y: {
+                                          suggestedMin: 0,
+                                          suggestedMax: 10000,//netasset[30],
+                                          title: {
+                                            display: true,
+                                            text: 'Net Asset'
+                                          }
+                                        },
+                                        auxaxis: {
+                                          beginAtZero: true,
+                                          position: 'right',
+                                          title: {
+                                            display: true,
+                                            text: 'Cash Flows'
+                                          }
 
-                                      },
-                                      y: {
-                                        suggestedMin: 0,
-                                        suggestedMax: 100,//netasset[30],
-                                      }
+                                        }
+
                                     } //scales
                                   } //options
                                 }); // mychart end

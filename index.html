@@ -304,7 +304,7 @@
               float:left;
               margin-top: 0%;
               margin-left: 1%;
-              height: 46px;
+              height: 43px;
               width:140px;;
               box-sizing: border-box;
               border: 2px solid white ;
@@ -599,8 +599,18 @@
               font-weight: bold;
               box-sizing: border-box;
 
-                          align-items: right;
+              align-items: right;
+              transition: .5s;
+            }
+            select
+            {
+              position: relative;
+              display: inline-block;
+              font-size: 15px;
+              font-weight: bold;
+              box-sizing: border-box;
 
+              align-items: right;
               transition: .5s;
             }
             input[type="text"]
@@ -643,7 +653,7 @@
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9100964804803285" crossorigin="anonymous"></script>
 
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6304d92dcb5b41001946a115&product=inline-share-buttons' async='async'></script>
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6304d92dcb5b41001946a115&product=inline-share-buttons' async='async'></script>
 
 
     </head>
@@ -667,10 +677,10 @@
       -->
 
         <h3><label for="total-asset"> PORTFOLIO</label></h3>
-        <h4><label for="total-asset">(Current worth. Unrelated to home)</label> </h4>
+        <h4><label for="total-asset">(Unrelated to home)</label> </h4>
         <h4><br></h4>
         <h3><label for="total-liability">LIABILITY </label> </h3>
-        <h4><label for="total-liability">(Interest-bearing loan)</label></h4>
+        <h4><label for="total-liability">(Interest-bearing)</label></h4>
 <!--
         <p>Choose the way of living</p><br>
         <select name="house-type">
@@ -680,7 +690,7 @@
 -->
         <h4><br></h4>
         <h3><label for="price-house-deposit">PRICE OF HOUSE/DEPOSIT</label></h3>
-        <h4><label for="price-house-deposit">(From tomorrow, ownership/renting)</label> </h4>
+        <h4><label for="price-house-deposit">(Before Retirement, ownership/rent)</label> </h4>
         <hr>
       </div>
 
@@ -758,11 +768,11 @@
         <h3><label for="annual-income">ANNUAL INCOME</label></h3>
         <h4><label for="annual-income">(Post tax)</label></h4>
         <h4><br></h4>
-        <h3><label for="annual-rent">ANNUAL RENT (12 * RENT)</label></h3>
-        <h4><label for="annual-rent">(From tomorrow, in case of renting) </label></h4>
+        <h3><label for="annual-rent">ANNUAL RENT</label></h3>
+        <h4><label for="annual-rent">(Before Retirement, in case of rent) </label></h4>
         <h4><br></h4>
         <h3><label for="cost-living">ANNUAL LIVING EXPENSES</label></h3>
-        <h4><label for="cost-living">(From tomorrow, <strong>excluding rent)</strong></label></h4>
+        <h4><label for="cost-living">(As a FIRE, <strong>excluding rent)</strong></label></h4>
         <hr>
 
       </div>
@@ -787,11 +797,11 @@
 <div class="divB3">
 
         <h3><label for="price-house-deposit-FIRE">PRICE OF HOUSE/DEPOSIT</label></h3>
-        <h4 style="color:blue;"><label for="price-house-deposit-FIRE">(At the time of <STRONG>FIRE</STRONG>, at this point,</label> </h4>
+        <h4 style="color:blue;"><label for="price-house-deposit-FIRE">(At <STRONG>Retirement</STRONG>, at this point,</label> </h4>
         <h4><label for="price-house-deposit-FIRE">&nbsp in case of ownership/rent)</label></h4>
         <h4><br></h4>
         <h3><label for="rent-FIRE">ANNUAL RENT</label></h3>
-        <h4 style="color:blue;"><label for="rent-FIRE">(At the time of <STRONG><EM>FIRE</EM></STRONG>, at this point)</label></h4>
+        <h4 style="color:blue;"><label for="rent-FIRE">(At <STRONG>Retirement</STRONG>, at this point)</label></h4>
 
 </div>
 
@@ -839,13 +849,13 @@
 
 <div class="divB4">
         <h3><label for="inflation-rate">EXPECTED INFLATION RATE</label></h3>
-        <h4><label for="inflation-rate">(Average inflation rate is %)</label></h4>
+        <h4><label for="inflation-rate">(Average inflation rate is 2.5%)</label></h4>
         <h4><br></h4>
         <h3><label for="return-investment">RETURN ON PORTFOLIO</label></h3>
         <h4><label for="return-investment">(10%~15% is recommended)</label></h4>
         <h4><br></h4>
         <h3><label for="dividend-yield">DIVIDEND YIELD</label></h3>
-        <h4><label for="dividend-yield">(Dividends on portfolio give stability)</label></h4>
+        <h4><label for="dividend-yield">(Dividends on portfolio)</label></h4>
 </div>
 
         <div class = "divC4">

@@ -548,6 +548,20 @@
               box-sizing: border-box;
               border: 3px solid white ;
             }
+            .divh001 {
+              width: 173px;
+              height: 50px;
+
+              position: absolute;
+              top: 80px;
+              left: 800px;
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 0%;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
             .divh1 {
               background-color: white;
               float:left;
@@ -719,6 +733,10 @@
               margin-right: 18%;
               box-sizing: border-box;
               border: 3px solid white ;
+            }
+
+            .divgoogletrans{
+
             }
 
             input
@@ -1045,16 +1063,17 @@
 
         </div>
 
-
-
-
+          <div class="divh001">
+        <div id="google_element"></div>
+          <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+          </div>
 
 
 
         <div class="divh0">
 
         <div class="divh1">
-        <h3 align= "center"></h3>
+        <h3 align= "center">  </h3>
         </div>
 
         <div class="divh21">
@@ -1166,6 +1185,11 @@
 
 
         <script type = "text/javascript">
+
+
+            function loadGoogleTranslate() {
+              new google.translate.TranslateElement("google_element");
+            }
 
 
                         var a, b, bb, c, e, f, g, h, j, k, l, m, loanrate, netasset, interestexpense, cashflow, results;

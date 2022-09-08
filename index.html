@@ -117,7 +117,7 @@
         text-align : center;
         }
         .button {
-        background-color: blue;
+        background-color: MediumBlue;
         border: none;
         color: white;
         text-align: center;
@@ -128,7 +128,15 @@
         padding: 5px 5px;
         border-radius: 0px;
         height: 49px;
-        width: 395px
+        width: 395px;
+        transition: 0.5s;
+      }
+      .button:focus {
+        outLine: 0;
+      }
+      .button:hover {
+        background-color: blue;
+        cursor: pointer;
       }
 
       .int-area label.warning {
@@ -156,6 +164,7 @@
                 width: 560px;
                 height: 848px;
                 margin-top:60px;
+                margin-left: -60px;
                 border: 3px solid white ;
 
             }
@@ -417,7 +426,7 @@
 
               position: absolute;
               top: 280px;
-              left: 700px;
+              left: 650px;
               background-color: white;
               float:left;
               margin-top: 0%;
@@ -695,7 +704,7 @@
 -->
         <h4><br></h4>
         <h3><label for="price-house-deposit">PRICE/DEPOSIT OF HOUSE</label></h3>
-        <h4><label for="price-house-deposit">(Before Retirement: ownership/rent)</label> </h4>
+        <h4><label for="price-house-deposit">(Ownership/Rent)</label> </h4>
         <hr>
       </div>
 
@@ -770,14 +779,14 @@
 
         <div class="divB2">
 
-        <h3><label for="annual-income">ANNUAL INCOME</label></h3>
-        <h4><label for="annual-income">(Post tax)</label></h4>
+        <h3><label for="annual-income">INCOME</label></h3>
+        <h4><label for="annual-income">(Annual, Post tax)</label></h4>
         <h4><br></h4>
-        <h3><label for="annual-rent">ANNUAL RENT</label></h3>
-        <h4><label for="annual-rent">(Before Retirement: in case of rent) </label></h4>
+        <h3><label for="annual-rent">RENT</label></h3>
+        <h4><label for="annual-rent">(Annual) </label></h4>
         <h4><br></h4>
-        <h3><label for="cost-living">ANNUAL LIVING EXPENSES</label></h3>
-        <h4><label for="cost-living">(As a FIRE: <strong>excluding rent)</strong></label></h4>
+        <h3><label for="cost-living">LIVING EXPENSES</label></h3>
+        <h4><label for="cost-living">(As a FIRE: <strong>Annual excluding rent)</strong></label></h4>
         <hr>
 
       </div>
@@ -802,10 +811,10 @@
 <div class="divB3">
 
         <h3><label for="price-house-deposit-FIRE">PRICE/DEPOSIT OF HOUSE</label></h3>
-        <h4 style="color:blue;"><label for="price-house-deposit-FIRE">(After <STRONG>Retirement</STRONG>: the Present value</label> </h4>
-        <h4><label for="price-house-deposit-FIRE">&nbsp in case of ownership/rent)</label></h4>
+        <h4 style="color:blue;"><label for="price-house-deposit-FIRE">(After <STRONG>Retirement</STRONG>: the Present value.</label> </h4>
+        <h4><label for="price-house-deposit-FIRE">&nbsp Ownership/Rent)</label></h4>
         <h4><br></h4>
-        <h3><label for="rent-FIRE">ANNUAL RENT</label></h3>
+        <h3><label for="rent-FIRE">RENT</label></h3>
         <h4 style="color:blue;"><label for="rent-FIRE">(After <STRONG>Retirement</STRONG>: the Present value)</label></h4>
 
 </div>
@@ -849,18 +858,18 @@
 -->
 
 <div class="divB30">
-        <h3> - INVESTMENT ENVIRONMENT</h3>
+        <h3> - EXPECTED INVESTMENT ENVIRONMENT</h3>
 </div>
 
 <div class="divB4">
-        <h3><label for="inflation-rate">EXPECTED INFLATION RATE</label></h3>
-        <h4><label for="inflation-rate">(Average inflation rate is 2.5%)</label></h4>
+        <h3><label for="inflation-rate">INFLATION RATE</label></h3>
+        <h4><label for="inflation-rate">(Average is 2.5%)</label></h4>
         <h4><br></h4>
         <h3><label for="return-investment">RETURN ON PORTFOLIO</label></h3>
-        <h4><label for="return-investment">(10%~15% is recommended)</label></h4>
+        <h4><label for="return-investment">(8%~15% is recommended)</label></h4>
         <h4><br></h4>
         <h3><label for="dividend-yield">DIVIDEND YIELD</label></h3>
-        <h4><label for="dividend-yield">(Dividends on portfolio)</label></h4>
+        <h4><label for="dividend-yield">(provides Stability)</label></h4>
 </div>
 
         <div class = "divC4">
@@ -1842,7 +1851,7 @@
 
                               delayBetweenPoints = totalDuration / data.length;
 
-                              const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+//                              const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
                                 ctx = document.getElementById('myChart').getContext('2d');
                                 myChart = new Chart(ctx, {
                                   type: 'line',
@@ -1897,7 +1906,7 @@
                                     },
                                     plugins: {
                                       legend: {
-                                         position: 'top'
+                                         position: 'top'// 'chartArea'//
                                       }   //legend: ture    false
                                     },
                                     scales: {
@@ -1914,33 +1923,30 @@
                                           title: {
                                             display: true,
                                             text: 'Net Asset',
+
     //                                        valueFormatString: "#,##0.##",
-/*                                           ticks: {
-                                          	  callback: function(label, index, labels){
-                                                              return label/1000;
-                                            	  callback: function(value){
-                                                          		const valueLegend = this.getLabelForValue(value);
-                                                          		const valueLegendRep = valueLegend.replaceAll(',', '');
-                                                          		if(valueLegendRep.length === 1) {
-                                                          			return valueLegendRep;
-                                                          		}
-                                                          		if(valueLegendRep.length === 6) {
-                                                          			return valueLegendRep.substr(0,3) + 'K';
-                                                          		}
-                                                          		if(valueLegendRep.length === 7) {
-                                                          			return valueLegendRep.substr(0,6) + 'M';
-                                                                }
+                                           ticks: {
 
-                                                              if(valueLegendRep.length === 10) {
-                                                          			return valueLegendRep.substr(0,7) + 'M';
-                                                              if(valueLegendRep.length === 7) {
-                                                          			return valueLegendRep.substr(0,4) + 'M';
-                                                              if(valueLegendRep.length === 7) {
-                                                          			return valueLegendRep.substr(0,4) + 'M';
+// don't wokr.. https://stackoverflow.com/questions/51108964/shorten-number-labels-in-charts-js
 
-                                                            }   //function
+                                          	  callback: function(value, index, values){
+                                                              var numeric1, numeric2;
+                                                              numeric1 = value/1000;
+                                                              numeric2 = value/1000000;
+                                                              if(value >=1000000){
+                                                                return numeric2 + 'M';
+                                                              }
+                                                              else if(value >=1000){
+                                                                      return numeric1 + 'K';
+                                                                    }
+
+
+                                                              return val;
+
+                                                        }   //function
+
                                             }  //ticks
-*/
+
                                           }  //title
 
                                         }, //yaxis
@@ -1957,6 +1963,7 @@
                                     } //scales
                                   } //options
                                 }); // mychart end
+
 
 
                           function removeData(chart) {

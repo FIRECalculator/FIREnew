@@ -1,0 +1,2555 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9100964804803285"
+     crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="description" content="FIRE calculator: Owning/Rent of before/after Retirement, Inflation and so on"/>
+        <meta name="robots" content="index,follow">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="FIRE Calculator- Owning/Rent, Inflation">
+        <meta property="og:description" content="FIRE calculator: Owning/Rent of before/after Retirement, Inflation and so on">
+        <meta property="og:image" content="https://invest2fire.com/invest2fire.png">
+        <meta property="og:url" content="https://invest2fire.com">
+        <meta name="naver-site-verification" content="531c2dd5d34f7e76f343993808ce495636a90be4" />
+
+        <title>
+            FIRE Calculator- Owning/Rent, Inflation
+        </title>
+        <style type="text/CSS">
+            html{
+                font-size: 22px;
+            }
+            h1{
+                font-size: 30px;
+
+                line-height: 20%;
+            }
+            h11{
+                font-size: 60px;
+                font-weight: bolder;
+                line-height: 20%;
+            }
+            h2{
+                font-size: 22px;
+                line-height: 10%;
+            }
+            h22{
+                font-size: 35px;
+                line-height: 70%;
+                font-weight: bolder;
+            }
+            h3{
+                font-size: 18px;
+                line-height: 0.4;
+                font-weight: bolder;
+            }
+            h4{
+                font-size: 13px;
+                line-height: 0em;
+            }
+            h5{
+                font-size: 0px;
+                line-height: 0px;
+            }
+            h51{
+                font-size: 110px;
+                line-height: 0em;
+            }
+            h52{
+                font-size: 110px;
+                line-height: 0em;
+            }
+            h53{
+                font-size: 110px;
+                line-height: 0em;
+            }
+            h54{
+                font-size: 110px;
+                line-height: 0em;
+            }
+            h100{
+                font-size: 13px;
+                line-height: 0em;
+                font-weight: bolder;
+                align-items: center;
+            }
+            p {
+                color:black;
+                font-size: 25px;
+                font-weight: 0;
+                margin-left: 0px;
+                margin-right: 0px;
+                line-height: 160%;
+            }
+            h60 {
+                color:black;
+                font-size: 25px;
+                font-weight: 0;
+                margin-left: 0px;
+                margin-right: 0px;
+                line-height: 120%;
+            }
+            a {
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+        .blll {
+        color:red;
+        }
+        .result {
+        color:Navy;
+        font-size: 35px;
+        }
+        .netassetfire {
+        color:Green;
+        font-size: 22px;
+        margin-left:140px;
+        }
+
+        .cashrati{
+          color:blue;
+          font-weight: bolder;
+        }
+
+        .cheerup {
+        color:blue;
+        font-size: 21px;
+        }
+        .reserved {
+        color:black;
+        font-size: 17px;
+        text-align : center;
+        }
+        .button {
+        background-color: MediumBlue;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration:none;
+        margin: 0px 0px;
+        cursor: pointer;
+        font-size: 22px;
+        padding: 5px 5px;
+        border-radius: 0px;
+        height: 49px;
+        width: 370px;
+        transition: 0.5s;
+      }
+      .button:focus {
+        outLine: 0;
+      }
+      .button:hover {
+        background-color: blue;
+        cursor: pointer;
+      }
+      .button2 {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration:none;
+      margin: 0px 0px;
+      cursor: pointer;
+      font-size: 19px;
+      padding: 5px 5px;
+      border-radius: 0px;
+      height: 35px;
+      width: 228px;
+      transition: 0.5s;
+    }
+    .button2:focus {
+      outLine: 0;
+    }
+    .button2:hover {
+      background-color: CornflowerBlue;
+      cursor: pointer;
+    }
+
+      .int-area label.warning {
+          color: red !important;
+          animation: warning .3s ease;
+          animation-iteration-count: 3;
+      }
+      @keyframes warning {
+          0% {trasnform: translatex(-8px);}
+          25% {trasnform: translatex(8px);}
+          50% {trasnform: translatex(-8px);}
+          75% {trasnform: translatex(8px);}
+      }
+
+            #bold {
+                font-weight: bold;
+                font-size: 20px;
+            }
+            div {
+                background-color: white;
+                }
+
+            .div0 {
+                background-color: white;
+                width: 660px;
+                height: 948px;
+                margin-top:60px;
+                margin-left: -60px;
+                border: 3px solid white ;
+
+            }
+            .divA {
+                background-color: white;
+                width: 800px;
+                height: 70px;
+
+                position: relative;
+                top: 0px;
+                left: 0px;
+                margin-top:0px;
+                margin-left:0px;
+                padding-left: 0px;
+
+                border: 3px solid white ;
+                border-radius: 0px;
+                font-size: 21px;
+             }
+             .divB01 {
+                 background-color: white;
+                 width: 250px; <!-- cash  -->
+                 height: 0px;
+
+                 float: left;
+
+                 margin-top:0px;
+                 margin-bottom:0px;
+                 padding-left: 0px;
+
+                 border: 3px solid white ;
+                 border-radius: 0px;
+                 font-size: 15px;
+             }
+            .divB1 {
+                background-color: white;
+                width: 230px; <!-- cash  -->
+                height: 0px;
+
+                float: left;
+
+                margin-top:0px;
+                margin-bottom:-10px;
+                padding-left: 0px;
+
+                border: 3px solid white ;
+                border-radius: 0px;
+                font-size: 15px;
+            }
+            .divB02 {
+              background-color: white;
+              width: 250px; <!-- cash  -->
+              height: 140px;
+
+              float: left;
+
+              margin-top: 0px;
+              margin-bottom:0px;
+              padding-left: 0px;
+
+              border: 3px solid white ;
+              border-radius: 0px;
+              font-size: 15px;
+            }
+            .divB2 {
+              background-color: white;
+              width: 230px; <!-- cash  -->
+              height: 100px;
+
+              float: left;
+
+              margin-top:0px;
+              margin-bottom:-10px;
+              padding-left: 0px;
+
+              border: 3px solid white ;
+              border-radius: 0px;
+              font-size: 15px;
+            }
+
+            .divB03 {
+              background-color: white;
+              width: 250px; <!-- cash  -->
+              height: 300px;
+
+              float: left;
+
+              margin-top:-20px;
+              margin-bottom:0px;
+              padding-left: 0px;
+
+              border: 3px solid white ;
+              border-radius: 0px;
+              font-size: 15px;
+            }
+            .divB3 {
+              background-color: white;
+              width: 230px; <!-- cash  -->
+              height: 100px;
+
+              float: left;
+
+              margin-top:0px;
+              margin-bottom:-10px;
+              padding-left: 0px;
+
+              border: 3px solid white ;
+              border-radius: 0px;
+              font-size: 15px;
+            }
+            .divB004 {
+                background-color: white;
+                width: 440px; <!-- cash  -->
+                height: 20px;
+
+               float: left;
+
+               margin-top: -13px;
+               margin-bottom:-10px;
+                padding-left: 0px;
+
+                border: 3px solid white ;
+                border-radius: 0px;
+                font-size: 12px;
+            }
+            .divBC4 {
+                background-color: white;
+                width: 380px; <!-- cash  -->
+                height: 20px;
+
+               float: left;
+
+               margin-top: 0px;
+               margin-bottom:-10px;
+                padding-left: 0px;
+
+                border: 3px solid white ;
+                border-radius: 0px;
+                font-size: 12px;
+            }
+
+            .divB04 {
+              background-color: white;
+              width: 250px; <!-- cash  -->
+              height: 100px;
+
+              float: left;
+
+              margin-top:0px;
+              margin-bottom: 0px;
+              padding-left: 0px;
+
+              border: 3px solid white ;
+              border-radius: 0px;
+              font-size: 15px;
+            }
+            .divB4 {
+              background-color: white;
+              width: 230px; <!-- cash  -->
+              height: 100px;
+
+              float: left;
+
+              margin-top:0px;
+              margin-bottom:-12px;
+              padding-left: 0px;
+
+              border: 3px solid white ;
+              border-radius: 0px;
+              font-size: 15px;
+            }
+            .divC01 {
+                background-color: white;
+                float:left;
+                margin-top: %;
+                margin-left: 1%;
+                width:110px;
+                box-sizing: border-box;
+                border: 3px solid white ;
+
+            }
+            .divC1 {
+                background-color: white;
+                height: 15px;
+                float:left;
+                margin-top: 5%;
+                margin-bottom: 35%;
+                margin-left: 1%;
+                width:120px;
+                box-sizing: border-box;
+                border: 3px solid white ;
+
+            }
+            .divC11 {
+                background-color: white;
+                height: 15px;
+                float:left;
+                margin-top: 0%;
+                margin-bottom: 0%;
+                margin-left: 1%;
+                width:120px;
+                box-sizing: border-box;
+                border: 3px solid white ;
+
+            }
+            .divC02 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 1%;
+              width:120px;
+              height:210px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC2 {
+              background-color: white;
+              float:left;
+              margin-top: 2%;
+              margin-bottom: 3%;
+              margin-left: 1%;
+              width:120px;
+
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC21 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 0%;
+              margin-left: 1%;
+              width:120px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC03 {
+              background-color: white;
+              float:left;
+              margin-top: 1.0%;
+              margin-left: 1%;
+              width:120px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC3 {
+              background-color: white;
+              float:left;
+              margin-top: -2%;
+              margin-bottom: 10%;
+              margin-left: 1%;
+              width:120px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC31 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 3%;
+              margin-left: 1%;
+              width:120px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC04 {
+              background-color: white;
+              float:left;
+              margin-top: 1%;
+              margin-left: 1%;
+              width:120px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC4 {
+              background-color: white;
+              float:left;
+              margin-top: 2%;
+              margin-left: 1%;
+              width:120px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divC41 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 0%;
+              margin-left: 1%;
+              width:120px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divD10 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 0%;
+              margin-left: 1%;
+              height: 250px;
+              width:150px;;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+
+            .divD1 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 0%;
+              margin-left: 2%;
+              height: 25px;
+              width:140px;;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divD01 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 7%;
+              margin-left: 2%;
+              height: 36px;
+              width:140px;;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divD11 {
+              background-color: white;
+              float:left;
+              margin-top: 19%;
+              margin-left: 2%;
+              height: 43px;
+              width:140px;;
+              box-sizing: border-box;
+              border: 2px solid white ;
+            }
+            .divD12 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 2%;
+              height: 34px;
+              width:140px;;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              padding-top: 0px;
+              padding-bottom: 0px;
+            }
+            .divD2 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 0%;
+              width:140px;;
+              height:210px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divD3 {
+              background-color: white;
+              float:left;
+              margin-top: -4.0%;
+              margin-left: 0%;
+              width:140px;;
+              height:140px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divD31 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 1%;
+              height: 46px;
+              width:140px;;
+              box-sizing: border-box;
+              border: 2px solid white ;
+            }
+            .divD32 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 0%;
+              margin-left: 0%;
+              height: 34px;
+              width:140px;;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+
+            .divD4 {
+              background-color: white;
+              float:left;
+              margin-top: 2%;
+              margin-left: -3%;
+              width:41px;;
+              height:150px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divD41 {
+              background-color: white;
+
+              margin-top: -2.3%;
+              margin-bottom: 2.3%;
+              margin-left: 0%;
+              height: 46px;
+              width:40px;;
+              box-sizing: border-box;
+              border: 2px solid white ;
+            }
+            .divD42 {
+              background-color: white;
+
+              margin-top: 29.5%;
+              margin-bottom: 2.3%;
+              margin-left: 0%;
+              height: 34px;
+              width:40px;;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divD43 {
+              background-color: white;
+
+              margin-top: 52.3%;
+              margin-bottom: 2.3%;
+              margin-left: 0%;
+              height: 34px;
+              width:40px;;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+
+            .divE1 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 1%;
+              width:100px;;
+              height:250px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divE2 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 1%;
+              width:109px;;
+              height:180px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divE3 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 1%;
+              width:109px;;
+              height:150px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divE4 {
+              background-color: white;
+              float:left;
+              margin-top: -21.5%;
+              margin-bottom: 0%;
+              margin-left: 5.5%;
+              width:235px;;
+              height:220px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divE40 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-bottom: 0%;
+              margin-left: 20%;
+              width:210px;;
+              height:34px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divE41 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 0%;
+              width:32px;;
+              height:25px;
+              box-sizing: content-box;
+              border: 0px solid white ;
+            }
+
+
+            .divh0 {
+              width: 840px;
+              height: 620px;
+
+              position: absolute;
+              top: 280px;
+              left: 750px;
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 0%;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divh001 {
+              width: 173px;
+              height: 50px;
+
+              position: absolute;
+              top: 80px;
+              left: 800px;
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 0%;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divh1 {
+              background-color: white;
+              float:left;
+              margin-top: 0%;
+              margin-left: 0%;
+              margin-bottom: 0%;
+              width:100%;
+              height:10px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+            .divh21 {
+              background-color: white;
+              float: left;
+              margin-top: 0%;
+              margin-left: 0%;
+              margin-bottom: 0%;
+              width:100%;
+              height:50px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 33px;
+              padding-right:0px;
+            }
+            .divh201 {
+              background-color: white;
+              float: left;
+              margin-top: 3%;
+              margin-left: 7.5%;
+              width:32%;
+              height:60px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 33px;
+              padding-right:0px;
+            }
+
+            .divh211 {
+              background-color: white;
+              float: left;
+              margin-top: 3%;
+              margin-left: 0%;
+              width:9%;
+              height:60px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 33px;
+              padding-right:0px;
+            }
+            .divh221 {
+              background-color: white;
+              float: left;
+              margin-top: 3%;
+              margin-left: 0%;
+              width:19%;
+              height:60px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 33px;
+            }
+            .divh231 {
+              background-color: white;
+              float: left;
+              margin-top: 3%;
+              margin-left: 0%;
+              width:25%;
+              height:60px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 33px;
+              font-weight: bold;
+            }
+
+            .divh22 {
+              background-color: white;
+              float: left;
+              margin-top: 0%;
+              margin-left: 0%;
+              width:5%;
+              height:85px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 33px;
+            }
+            .divh23 {
+              background-color: white;
+              float: left;
+              margin-top: 0%;
+              margin-left: 0%;
+              width:33%;
+              height:85px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 33px;
+              font-weight: bold;
+            }
+
+
+            .chartBox {
+                padding-top:110px;
+                margin-top: 8%;
+                margin-left: 0%;
+                width: 800px;
+                height: 415px;
+            }
+            .divh31 {
+              background-color: white;
+              float: left;
+              margin-top: 0%;
+              margin-left: 0%;
+              width:75%;
+              height:20px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 20px;
+              padding-right:7px;
+            }
+            .divh32 {
+              background-color: white;
+              float: left;
+              margin-top: 0%;
+              margin-left: 0%;
+              width:25%;
+              height:20px;
+              box-sizing: border-box;
+              border: 3px solid white ;
+              font-size: 25px;
+            }
+
+            .divh4 {
+              width: 100%;
+              height: 30px;
+
+              top: 0px;
+              left: 0px;
+              background-color: white;
+              float:left;
+              margin-top: 1%;
+              margin-bottom: : 0%;
+              margin-left: 0%;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+
+            .divexplained {
+              background-color: white;
+              float:left;
+              margin-top: 0.0%;
+              margin-left: 20%;
+              margin-right: %;
+
+              box-sizing: border-box;
+              border: 3px solid white ;
+
+              width: 1000px;
+              height: 1150px;
+            }
+
+
+            .divbottom {
+              width: 1100px;
+              height: 150px;
+
+              line-height: 0%;
+              background-color: white;
+              float:left;
+              margin-top: 8%;
+              margin-left: 18%;
+              margin-right: 18%;
+              box-sizing: border-box;
+              border: 3px solid white ;
+            }
+
+            .divgoogletrans{
+
+            }
+
+            input
+            {
+              position: relative;
+              display: inline-block;
+              font-size: 14px;
+              font-weight: bold;
+              height: 25px;
+              width: 30px;
+              box-sizing: border-box;
+
+              align-items: right;
+              transition: .5s;
+            }
+            select
+            {
+              position: relative;
+              display: inline-block;
+              font-size: 15px;
+              font-weight: bold;
+              box-sizing: border-box;
+
+              align-items: right;
+              transition: .5s;
+            }
+            input[type="text"]
+            {
+              background: #fff;
+              width: 100px;
+              height: 47px;
+              margin-top: 0px;
+              margin-bottom: 0px;
+              outline:none;
+              padding: 0px 10px;
+              border-radius: 0px 0 0 0px ;
+            }
+            input[type="number"]
+            {
+              background: #fff;
+              width: 45px;
+              height: 27px;
+              margin-top: 0px;
+              margin-bottom: 0px;
+              outline:none;
+              padding: 0px 10px;
+              border-radius: 0px 0 0 0px ;
+            }
+
+            .list01 {
+              margin-left: 0px;
+              margin-right: 0px;
+              list-style: disc;
+              line-height: 180%;
+            }
+            .list02 {
+              margin-left: 0px;
+              margin-right: 0px;
+              list-style: square;
+            }
+            .list03 {
+              margin-left: 0px;
+              margin-right: 0px;
+              list-style: circle;
+            }
+
+
+            body {
+                margin-left:100px;
+                font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif''
+                border-radius: 0px 0 0 0px;
+              }
+        </style>
+
+
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6304d92dcb5b41001946a115&product=inline-share-buttons' async='async'></script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9100964804803285"
+             crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+<!--
+      <script type="text/javascript" src ="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <div align= "right" id="google_translate_element"></div>
+-->
+
+        <div class="div0">
+
+        <div class="divB01">
+
+        <div class="divB1">
+
+        <!--
+        <p>Choose the way of residence (renting vs. owning a home)</p><br>
+        <select name="type-residence">
+            <option value="rent">rent</option>
+            <option value="ownership">ownership</option>
+        </select>
+      -->
+
+          <h3><label for="total-asset"> PORTFOLIO</label></h3>
+          <h4><label for="total-asset">(Excluding price/deposit of home)</label> </h4>
+        </div>
+        <div class="divB1">
+          <h3><label for="total-liability">Debt</label> </h3>
+          <h4><label for="total-liability">(Interest-bearing)</label></h4>
+        </div>
+        <div class="divB1">
+          <h3><label for="total-liability2">LIABILITY</label> </h3>
+          <h4  style="color:blue;"><label for="total-liability2">(Non interest-bearing)</label></h4>
+        </div>
+<!--Non Interest-bearing liability   -->
+
+<!--
+        <p>Choose the way of living</p><br>
+        <select name="house-type">
+            <option value="ownership">ownership</option>
+            <option value="rent">rent</option>
+        </select> <br>
+-->
+        <div class="divB1">
+          <h3><label for="price-house-deposit">PRICE/DEPOSIT OF HOUSE</label></h3>
+          <h4><label for="price-house-deposit">(Ownership/Rent)</label> </h4>
+          <hr>
+        </div>
+
+        </div>
+
+      <div class = "divC01">
+      <div class = "divC1">
+        <input type="text" style= "text-align: right" id="total-asset" onKeyDown="checkFloat(event, this.value);" placeholder="" ><br>
+      </div>
+      <div class = "divC1">
+        <input type="text" style= "text-align: right" id="total-liability"  onKeyDown="checkFloat(event, this.value);"  placeholder=""><br>
+      </div>
+      <div class = "divC1">
+        <input type="text" style= "text-align: right" id="total-liability2"  onKeyDown="checkFloat(event, this.value);"  placeholder="">
+      </div>
+      <div class = "divC1">
+        <input type="text" style= "text-align: right" id="price-house-deposit" onKeyDown="checkFloat(event, this.value);"  placeholder="">
+      </div>
+      <div class = "divC11">
+
+      </div>
+      </div>
+
+
+      <div class = "divD10">
+      <div class = "divD1">
+      <h4 class="cashrati"><label for="cashratio">Select cash ratio</label></h4>
+      </div>
+      <div class = "divD01">
+        <select id="cashratio">
+
+          <option value="ignorecash">Don't care</option>
+          <option value="0%">0%</option>
+          <option value="5%">5%</option>
+          <option value="10%">10%</option>
+          <option value="15%">15%</option>
+          <option value="20%">20%</option>
+          <option value="25%">25%</option>
+          <option value="30%">30%</option>
+          <option value="35%">35%</option>
+          <option value="40%">40%</option>
+          <option value="45%">45%</option>
+          <option value="50%">50%</option>
+          <option value="55%">55%</option>
+          <option value="60%">60%</option>
+          <option value="65%">65%</option>
+          <option value="70%">70%</option>
+          <option value="75%">75%</option>
+          <option value="80%">80%</option>
+          <option value="85%">85%</option>
+          <option value="90%">90%</option>
+          <option value="95%">95%</option>
+          <option value="100%">100%</option>
+      </select>
+
+<!--      <input id = "cash-ratio" type="range" value = "20" min ="0" max = "100" step "10">  -->
+      </div>
+
+
+      <div class = "divD1">
+
+      </div>
+      <div class = "divD1">
+
+      </div>
+      <div class = "divD11">
+      <h4 style="color:blue;"><label for="selectvalue">Choose the current</label></h4>
+      <h4><label for="selectvalue">way of living</label></h4>
+    </div>
+
+      <div class = "divD12">
+        <select id="selectvalue">
+          <option value="noselect">Select</option>
+          <option value="ownership">Ownership</option>
+          <option value="renting">Renting</option>
+      </select>
+
+      </div>
+      </div>
+
+      <div class = "divE1">
+      </div>
+
+
+        <div class="divB02">
+        <div class="divB2">
+          <h3><label for="annual-income">INCOME</label></h3>
+          <h4><label for="annual-income">(Annual, Post tax)</label></h4>
+        </div>
+        <div class="divB2">
+          <h3><label for="annual-rent">RENT</label></h3>
+          <h4><label for="annual-rent">(Annual) </label></h4>
+        </div>
+        <div class="divB2">
+          <h3><label for="cost-living">LIVING EXPENSES</label></h3>
+          <h4><label for="cost-living">(As a FIRE: <strong>Annual excluding rent)</strong></label></h4>
+                  <hr>
+        </div>
+
+        </div>
+
+      <div class = "divC02">
+      <div class = "divC2">
+        <input type="text" style= "text-align: right"  id="annual-income" onKeyDown="checkFloat(event, this.value);"  placeholder=""><br>
+      </div>
+      <div class = "divC2">
+        <input type="text" style= "text-align: right"  id="annual-rent"  onKeyDown="checkFloat(event, this.value);"  placeholder="If rent"><br>
+      </div>
+      <div class = "divC2">
+        <input type="text" style= "text-align: right" id="cost-living" onKeyDown="checkFloat(event, this.value);"  placeholder="">
+      </div>
+      <div class = "divC21">
+
+      </div>
+      </div>
+
+
+      <div class = "divD2">
+    <!-- blank -->
+      </div>
+
+      <div class = "divE2">
+      </div>
+
+
+
+<div class="divB03">
+<div class="divB3">
+        <h3><label for="price-house-deposit-FIRE">PRICE/DEPOSIT OF HOUSE</label></h3>
+        <h4 style="color:blue;"><label for="price-house-deposit-FIRE">(After <STRONG>Retirement</STRONG>: the Present value.</label> </h4>
+        <h4><label for="price-house-deposit-FIRE">&nbsp Ownership/Rent)</label></h4>
+  </div>
+<div class="divB3">
+        <h3><label for="rent-FIRE">RENT</label></h3>
+        <h4 style="color:blue;"><label for="rent-FIRE">(After <STRONG>Retirement</STRONG>: the Present value)</label></h4>
+    <hr>
+</div>
+
+</div>
+
+<div class = "divC03">
+<div class = "divC3">
+  <input type="text" style= "text-align: right" id="price-house-deposit-FIRE" onKeyDown="checkFloat(event, this.value);"  placeholder=""><br>
+</div>
+<div class = "divC3">
+  <input type="text" style= "text-align: right" id="rent-FIRE"  onKeyDown="checkFloat(event, this.value);"  placeholder="If rent"><br>
+</div>
+<div class = "divC31">
+</div>
+</div>
+
+
+
+  <div class="divD3">
+
+
+  <div class = "divD31">
+  <h4 style="color:blue;"><label for="selectvalueFIRE">Select the desired</label></h4>
+    <h4><label for="selectvalueFIRE">way of living</label></h4>
+  </div>
+
+  <div class = "divD32">
+
+  <select id="selectvalueFIRE">
+      <option value="noselect">Select</option>
+      <option value="ownership">Ownership</option>
+      <option value="renting">Renting</option>
+  </select>
+
+</div>
+  </div>
+
+  <div class = "divE3">
+  </div>
+<!--
+        <p>Select expected investment environment</p><br>
+        <select name="investment-environment">
+            <option value="Normal" > Normal </option>
+            <option value="Bullish"> Bullish Random </option>
+            <option value="Bearish"> Bearish Random </option>
+        </select>
+-->
+
+<div class="divB004">
+        <h3> - EXPECTED INVESTMENT ENVIRONMENT</h3>
+
+</div>
+<div class= "divBC4">
+<div class="divB04">
+  <div class="divB4">
+
+        <h3><label for="inflation-rate">INFLATION RATE</label></h3>
+        <h4><label for="inflation-rate">(Average is 2.5%)</label></h4>
+</div>
+  <div class="divB4">
+        <h3><label for="return-investment">RETURN ON PORTFOLIO</label></h3>
+        <h4><label for="return-investment">(8%~15% is recommended)</label></h4>
+</div>
+  <div class="divB4">
+        <h3><label for="dividend-yield">DIVIDEND YIELD</label></h3>
+        <h4><label for="dividend-yield">(provides Stability)</label></h4>
+</div>
+</div>
+
+        <div class = "divC04">
+        <div class = "divC4">
+          <input type="text" style= "text-align: right" id="inflation-rate" onKeyDown="checkFloat(event, this.value);"  placeholder=""><br>
+        </div>
+        <div class = "divC4">
+          <input type="text" style= "text-align: right" id="return-investment"  onKeyDown="checkFloat(event, this.value);"  placeholder=""><br>
+        </div>
+        <div class = "divC4">
+          <input type="text" style= "text-align: right" id="dividend-yield" onKeyDown="checkFloat(event, this.value);"  placeholder="">
+        </div>
+        <div class = "divC41">
+        </div>
+      </div>
+        <button class="button" id="Click-me">Calculate the real world!</button>
+
+    </div>
+
+
+        <div class="divD4">
+
+        <div class="divD41">
+            <h3>[%]</h3>
+        </div>
+
+        <div class="divD42">
+            <h3>[%]</h3>
+        </div>
+
+        <div class="divD43">
+            <h3>[%]</h3>
+        </div>
+
+        </div>
+
+        <div class = "divE4">
+
+        <div class = "divE40">
+        <h4 style="color:blue">(If Needed, Use this)</h4>
+      </div>
+
+        <table border="1px" width="230" style="font-size:15px;">
+          <caption>PORTFOLIO Yield Calculator</caption>
+          <tr>
+            <th style="text-align:center" width="150">For Each Asset </th>
+            <th style="text-align:center" width="7">A </th>
+            <th style="text-align:center" width="7">B</th>
+            <th style="text-align:center" width="7">C</th>
+          </tr>
+          <tr>
+            <td style="text-align:center">Portion[%]</td>
+            <td><div class = "divE41"> <input style="text" id="classA-portion" onKeyDown="checkFloat(event, this.value);"  placeholder=""></div></td>
+            <td><div class = "divE41"> <input  style="text" id="classB-portion" onKeyDown="checkFloat(event, this.value);"  placeholder=""></div></td>
+            <td><div class = "divE41"> <input  style="text" id="classC-portion" onKeyDown="checkFloat(event, this.value);"  placeholder=""></div></td>
+          </tr>
+          <tr>
+            <td style="text-align:center">Yield[%]</td>
+            <td><div class = "divE41"> <input style="text" id="classA-yield" onKeyDown="checkFloat(event, this.value);"  placeholder=""></div></td>
+            <td><div class = "divE41"> <input style="text" id="classB-yield" onKeyDown="checkFloat(event, this.value);"  placeholder=""></div></td>
+            <td><div class = "divE41"> <input style="text" id="classC-yield" onKeyDown="checkFloat(event, this.value);"  placeholder=""></div></td>
+          </tr>
+          <tr>
+            <td style="text-align:center">Result[%]</td>
+            <td colspan="3"> <h100  align= "center" id="yieldresult"> </h100></td>
+          </tr>
+
+        </table>
+        <button class="button2" id="Click-me2">Calculate!</button>
+
+        </div>
+
+
+
+        </div>
+
+
+
+        <div class="divh0">
+
+        <div class="divh1">
+        <h3 align= "center">  </h3>
+        </div>
+
+        <div class="divh21">
+            <h1  align= "center"> You can achieve Financial Independence and</h1>
+        </div>
+        <div class="divh201">
+            <h11  align= "right">Retire in</h11>
+        </div>
+        <div class="divh211">
+            <h11  align= "right" id="result"> </h11>
+        </div>
+        <div class="divh221">
+            <h11  align= "right">years</h11>
+        </div>
+        <div class="divh231">
+            <h11  align= "left" id="years"></h11>
+        </div>
+
+        <div class="chartBox">
+            <canvas id="myChart"></canvas>
+        </div>
+<!--
+        <div class="divh4">
+          <h4 align= "center">(Click on the legend above to see detail) </h4>
+         </div>
+-->
+
+<!--
+        <div class="divh31">
+            <h2  align= "right">The net worth at the time of retirement is</h2>
+        </div>
+        <div class="divh32">
+            <h2  align= "left" id="net-assets"> </h2>
+        </div>
+-->
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+      </div>
+<!--
+        <br><p>Net asset is <input type="text" style="text-align: right; padding-right: 10px;" id="net-asset" size="8" placeholder="auto cal."> </p>
+        <br><p>Monthly interest expense on total liabilities<input type="text" style="text-align: right; padding-right: 10px;" id="interest-expense" onKeyDown="checkFloat(event, this.value);" size = "8" placeholder=""></p>
+        <br><p>Monthly cash flow is  <input type="text" style="text-align: right; padding-right: 10px;" id="cash-flow" onKeyDown="checkFloat(event, this.value);" size = "8"  placeholder="auto cal."> </p>
+
+-->
+
+
+
+         <!-- -
+          https://www.youtube.com/watch?v=A7G-kAyfxqY
+         -->
+
+
+<!-- moving emoticon https://tenor.com/search/moving-emoticon-gifs -->
+<!-- html color  https://sidepower.tistory.com/168 -->
+<!-- share sharethis.com/  -->
+<!--emoji https://getemoji.com/  -->
+
+        <p></p><br>
+        <p></p><br>
+        <p></p><br>
+        <p></p><br>
+<!-- broken..
+<img width ="50%" height = "50%" src="https://images.unsplash.com/photo-1468818438311-4bab781ab9b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZpbmFuY2lhbCUyMGZyZWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="driving woman">
+-->
+
+        <div class = "divexplained">
+
+              <h22 align= "left">Explained</h22>
+              <p style="">This site provides concise and correct method to predict the time you can FIRE. To accurately reflect reality, the calculator requires inflation rate, treturn on investment, cash held, dividends yield, as well as basic factors such as housing costs, living expenses and interestexpense. Also Instead of difficult terms such as withdrawal rate, actual costs are entered immediately.</p>
+              <ul class="list01">
+                  <li>The timing of FIRE varies not only by living expenses but also by the way of residence (renting vs. owning a home)</li>
+                  <li>For stability, it was assumed that FIRE is possible when after-tax return on investment exceeds the cost of living, rent and interest expense. For this reason, your assets will increase even after FIRE.</li>
+                            <ul class="list02">
+                              <li>In the first year of retirement as well as thereafter, after-tax return on investment will exceed various expenses. In other words, it becomes an inflation hedge. </li>
+                            </ul>
+                  <li>Cash held and dividends from investments will protect you from working again even if markets fall for two consecutive years. In order to achieve this goal, it was assumed that FIRE is possible when Cash held and dividends from investments over the next two years exceed the living cost, monthly rent and interest expense for two years</li>
+                  <li>Summarizing the conditions for retirement(FIRE), </li>
+                      <ul class="list02">
+                      <li><em><strong>Condition1</strong></em>: Expected return on investment(after-tax) exceeds the cost of living, rent and interest expense each year</li>
+                      <li><em><strong>Condition2</strong></em>: Cash held and expected dividends from investments over the next two years exceed the living cost, rent and interest expense for two years</li>
+                            <ul class="list03">
+                              <li style="circle">If you select 'Don't care' in 'Select cash ratio' option above, system ignores Condition2 for FIRE.</li>
+                            </ul>
+                      </ul>
+                  <li>This calculator reflects inflation</li>
+
+                      <ul class="list02">
+                      <li>Not only house prices but also monthly rent/deposits go up as prices rise</li>
+                      <li>Cash flows(net income, cost of living) increase with inflation</li>
+                      <li>The loan interest rate = inflation rate + 2%</li>
+                      </ul>
+              </ul>
+
+            </div>
+
+
+
+
+
+<div class= "divbottom">
+  <hr>
+        <h4><br></h4>
+        <p class="reserved">Contact us ✉️ Invest2fire.com@gmail.com</p>
+        <p class="reserved">Copyright © 2022 Invest 2 FIRE - All Rights Reserved.</p>
+        <h3><br></h3>
+</div>
+
+
+        <script type = "text/javascript">
+
+
+/*
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+
+        }
+*/
+
+
+
+                        var a, b, bb, c, e, f, g, h, j, k, l, m, loanrate, netasset, interestexpense, cashflow, results;
+                        var cashrat;
+                        var year, year0;
+
+                        var today = new Date();
+                        var year0 = today.getFullYear();
+
+                        var selectvalue;
+                        var selectvalueFIRE;
+                        var cashr;
+
+                        selectvalue = "renting";
+                        selectvalueFIRE = "renting";
+                        cashr = 0.00;
+
+
+                       var totalasset = [];
+
+                       var pricehousedeposit = [];
+                       var annualincome = [];
+                       var annualrent = [];
+                       var costliving = [];
+                       var pricehousedepositFIRE = [];
+                       var annualrentFIRE = [];
+                       var dividendyield = [];
+
+                       var cashflow = [];
+                       var returns = [];
+                       var dividend = [];
+
+                       var cashflowreturn = [];
+                       var netasset = [];
+
+                       var annualrentvirtualFIRE = [];
+                       var totalassetvirtualFIRE = [];
+                       var pricehousedepositvirtualFIRE = [];
+                       var returnsvirtualFIRE = [];
+                       var dividendvirtual = [];
+                       var cashvirtual = [];
+
+                       var jjj = 0;
+
+
+                       cashrat =  0.1;
+
+
+                       a = 400000;
+                       b = 100000;
+                       bb = 0;
+                       c = 3000;
+                       e = 60000;
+                       f = 15000;
+                       g = 30000;
+                       h = 3000;
+                       j = 17000;
+                       k = 0.03;
+                       l = 0.12;
+                       m = 0.03;
+
+// document.getElementById("total-assets").innertext = 1100;
+
+                              calfunc0();
+
+
+
+                              var data = [];
+                              var data2 = [];
+                              var data3 = [];
+                              var data4 = [];
+                              var data5 = [];
+                              var data6 = [];
+                              var data7 = [];
+                              var data8 = [];
+                              var prev;
+                              var prev2;
+                              var prev3;
+                              var prev4;
+                              var prev5;
+                              var prev6;
+                              var prev7;
+                              var prev8;
+
+                              var annualincome2 = [];
+                              var annualrent2 = [];
+                              var annualrentFIRE2 = [];
+                              var totalasset2 = [];
+                              var totalassetvirtualFIRE2 = [];
+                              var dividend2 = [];
+                              var dividendvirtual2 = [];
+                              var netasset2 = [];
+                              var cashflow2 = [];
+                              var cashflowreturn2 = [];
+
+                              var myChart , ctx;
+                              const totalDuration = 2000;
+                              var delayBetweenPoints;
+
+                              updategraph();
+
+            function checkFloat(event, v){
+              var key = event.key;
+              console.log(key);
+              //if(key == 'Process') event.preventDefault();  //don't work
+              if((key >=0 && key <10) || key == 'Backspace' || key == 'Delete' || key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Tab'){
+                return true;
+              }   else if (key == '.'){
+                          if(v =='') event.preventDefault();
+                            else if (v.indexOf('.') === -1) return true;
+                                  else event.preventDefault();
+              } else{
+                event.preventDefault();   //
+              }
+            }
+
+            document.getElementById("Click-me2").onclick = function() {
+              var classAportion, classAportion2;
+              var classBportion, classBportion2;
+              var classCportion, classCportion2;
+              var classAyield, classAyield2;
+              var classByield, classByield2;
+              var classCyield, classCyield2;
+              var yieldresults, yieldresults2;
+              var resultedyield;
+
+/*
+              if(document.getElementById("classA-portion").value == "") classAportion = 0;
+              if(document.getElementById("classB-portion").value == "") classBportion = 0;
+              if(document.getElementById("classC-portion").value == "") classCportion = 0;
+
+              if(document.getElementById("classA-yield").value == "") classAyield = 0;
+              if(document.getElementById("classB-yield").value == "") classByield = 0;
+              if(document.getElementById("classC-yield").value == "") classCyield = 0;
+*/  // don't work
+
+
+
+
+/*
+              var count2 = 0;
+              if(isNaN(classAportion) && count2==0){
+               alert("Enter numbers in class A portion");
+                   count2=1;
+               }
+               if(isNaN(classBportion) && count2==0){
+                alert("Enter numbers in class B portion");
+                    count2=1;
+                }
+                if(isNaN(classCportion) && count2==0){
+                 alert("Enter numbers in class C portion");
+                     count2=1;
+                 }
+                 if(isNaN(classAyield) && count2==0){
+                  alert("Enter numbers in class A Yield");
+                      count2=1;
+                  }
+                  if(isNaN(classByield) && count2==0){
+                   alert("Enter numbers in class B Yield");
+                       count2=1;
+                   }
+                   if(isNaN(classCyield) && count2==0){
+                    alert("Enter numbers in class C Yield");
+                        count2=1;
+                    }
+*/
+classAportion = parseInt(document.getElementById("classA-portion").value*100);
+classBportion = parseInt(document.getElementById("classB-portion").value*100);
+classCportion = parseInt(document.getElementById("classC-portion").value*100);
+
+classAyield = parseInt(document.getElementById("classA-yield").value*100);
+classByield = parseInt(document.getElementById("classB-yield").value*100);
+classCyield = parseInt(document.getElementById("classC-yield").value*100);
+
+
+                  if(isNaN(classAportion) || isNaN(classAyield)){
+                        if(isNaN(classBportion) || isNaN(classByield)){
+                                if(isNaN(classCportion) || isNaN(classCyield)){
+                                    alert("Enter numbers to calculate Asset Yield");
+                                }
+                                else {
+                                  classCportion2 = classCportion*0.0001;
+                                  classCyield2 = classCyield*0.0001;
+                                  yieldresults = (classCportion2 * classCyield2) *100;
+                                }
+                        }
+                        else {
+                                if(isNaN(classCportion) || isNaN(classCyield)){
+                                    classBportion2 = classBportion*0.0001;
+                                    classByield2 = classByield*0.0001;
+                                   yieldresults = (classBportion2 * classByield2) *100;
+                                }
+                                else {
+                                  classBportion2 = classBportion*0.0001;
+                                  classByield2 = classByield*0.0001;
+                                  classCportion2 = classCportion*0.0001;
+                                  classCyield2 = classCyield*0.0001;
+                                   yieldresults = (classBportion2 * classByield2 + classCportion2 * classCyield2) * 100;
+                                }
+                        }
+                    }
+
+                  else {
+                        if(isNaN(classBportion) || isNaN(classByield)){
+                                if(isNaN(classCportion) || isNaN(classCyield)){
+                                      classAportion2 = classAportion*0.0001;
+                                      classAyield2 = classAyield*0.0001;
+                                      yieldresults = (classAportion2 * classAyield2) * 100;
+                                }
+                                else {
+                                      classAportion2 = classAportion*0.0001;
+                                      classAyield2 = classAyield*0.0001;
+                                      classCportion2 = classCportion*0.0001;
+                                      classCyield2 = classCyield*0.0001;
+
+                                      yieldresults = (classAportion2 * classAyield2 + classCportion2 * classCyield2) * 100;
+                                }
+                        }
+                        else {
+                                if(isNaN(classCportion) || isNaN(classCyield)){
+                                  classAportion2 = classAportion*0.0001;
+                                  classAyield2 = classAyield*0.0001;
+                                  classBportion2 = classBportion*0.0001;
+                                  classByield2 = classByield*0.0001;
+                                      yieldresults = (classAportion2 * classAyield2 + classBportion2 * classByield2) * 100;
+                                }
+                                else {
+                                  classAportion2 = classAportion*0.0001;
+                                  classAyield2 = classAyield*0.0001;
+                                  classBportion2 = classBportion*0.0001;
+                                  classByield2 = classByield*0.0001;
+                                  classCportion2 = classCportion*0.0001;
+                                  classCyield2 = classCyield*0.0001;
+
+                                      yieldresults = (classAportion2 * classAyield2 + classBportion2 * classByield2 + classCportion2 * classCyield2) * 100;
+                                }
+                        }
+
+                  }
+
+                yieldresults2 = yieldresults*10;
+    //            alert(yieldresults2);
+              resultedyield = document.getElementById("yieldresult");
+
+    //              alert("genius");
+
+                      resultedyield.innerHTML = Math.round(yieldresults2)/10;
+
+            }  // Yield cal function()
+
+
+
+          function calfunc0() {
+
+           let count=0;
+
+           cashrat =  0.1;
+
+           annualrent[0] = f;
+
+
+          annualrentFIRE[0] = 0;
+
+          var jj, kk;
+          jj = 0;
+          kk = 0;
+          results = 100;
+
+          loanrate = k + 0.02;
+          interestexpense = b * loanrate ;
+
+
+          totalasset[0] = a ;
+          pricehousedeposit[0] = c;
+          annualincome[0] = e;
+          costliving[0]= g;
+          pricehousedepositFIRE[0]= 0;
+          dividendyield [0] = 0;
+
+          cashflow[0] = 0;
+
+          returns [0] = 0;
+          dividend [0] = 0;
+
+          annualrentvirtualFIRE [0] = j;
+
+          pricehousedepositvirtualFIRE [0] = h;
+          returnsvirtualFIRE [0] = 0;
+          returnsvirtualFIRE [1] = 0;
+
+          cashvirtual [0] = 0;
+          cashvirtual [1] = 0;
+
+
+
+          cashflowreturn [0] = 0;
+          netasset [0] = a - b -bb + c ;
+
+
+          if(count==0){
+
+          for(jj = 0; jj<=30; jj = jj + 1){
+
+            if(jj == 0){
+              if(selectvalue == "ownership") {
+                 pricehousedeposit[jj+1] = pricehousedeposit[jj] * (1 + k);
+              }
+              if(selectvalue == "renting") {
+                  pricehousedeposit[jj+1] = pricehousedeposit[jj];
+              }
+
+                if(selectvalueFIRE == "ownership") {
+                    annualrentvirtualFIRE[jj] = 0 ;
+                    annualrentvirtualFIRE[jj+1] = 0 ;
+
+                    pricehousedepositvirtualFIRE[jj+1] = pricehousedepositvirtualFIRE[jj] * (1 + k);
+                }
+                if(selectvalueFIRE == "renting") {
+                      annualrentvirtualFIRE[jj+1] = annualrentvirtualFIRE[jj] * (1 + k);
+                }
+             }
+
+            if(jj > 0){
+                  costliving [jj] = costliving[jj-1] * (1 + k);
+                  annualincome[jj] = annualincome[jj-1] * (1 + k);
+                  annualrent[jj] = annualrent[jj-1] * (1 + k);
+
+                   if(kk == 0){
+
+                        if(selectvalue == "ownership") {
+                           pricehousedeposit[jj] = pricehousedeposit[jj-1] * (1 + k);
+                           pricehousedeposit[jj+1] = pricehousedeposit[jj] * (1 + k);
+                        }
+                        if(selectvalue == "renting") {
+                            pricehousedeposit[jj] = pricehousedeposit[jj-1];
+                            pricehousedeposit[jj+1] = pricehousedeposit[jj];
+                        }
+
+                          if(selectvalueFIRE == "ownership") {
+
+
+                              annualrentvirtualFIRE[jj] = 0 ;
+                              annualrentvirtualFIRE[jj+1] = 0 ;
+
+                              pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
+                              pricehousedepositvirtualFIRE[jj+1] = pricehousedepositvirtualFIRE[jj] * (1 + k);
+                          }
+                          if(selectvalueFIRE == "renting") {
+
+                                annualrentvirtualFIRE[jj] = annualrentvirtualFIRE[jj-1] * (1 + k);
+                                annualrentvirtualFIRE[jj+1] = annualrentvirtualFIRE[jj] * (1 + k);
+
+                                pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
+                          }
+                     }
+            }
+
+
+
+
+              var increaseofreturnsvirtualFIRE;
+
+
+              if(kk == 0) {
+                  totalassetvirtualFIRE[jj] = netasset[jj] + b + bb - pricehousedepositvirtualFIRE[jj] ;
+                  returnsvirtualFIRE[jj] = totalassetvirtualFIRE[jj] * l;
+                  costliving [jj+1] = costliving[jj] * (1 + k);
+
+                  cashvirtual[jj] = totalassetvirtualFIRE[jj] * cashrat ;
+
+                  dividendvirtual [jj] = totalassetvirtualFIRE[jj] * m;
+                  dividendvirtual [jj+1] = dividendvirtual [jj] * (1+l-m);
+
+                  totalassetvirtualFIRE[jj+1] = totalassetvirtualFIRE[jj] +returnsvirtualFIRE[jj] - costliving[jj] - annualrentvirtualFIRE[jj] - interestexpense;
+                  returnsvirtualFIRE[jj+1] = totalassetvirtualFIRE[jj+1] * l;
+                  increaseofreturnsvirtualFIRE = returnsvirtualFIRE[jj+1]/returnsvirtualFIRE[jj]-1;
+              }
+
+                  while(kk == 0 ){
+                    if(cashr == "ignorecash"){
+
+                              if(jj == 0){
+
+                              }
+                              if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense))) {
+
+                                      results = jj;
+
+                                      annualincome[jj] = 0;
+                                      annualrent[jj] = 0;
+                                      pricehousedeposit[jj] = 0;
+                                      pricehousedeposit[jj+1] = 0;
+
+                                      annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
+                                      pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
+
+                                      totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+
+                                      kk = 1;
+                                    }
+                    }  //cashrati if. or else
+
+                    if(cashr != "ignorecash"){
+
+                              if(jj==0){
+          //                                      alert(cashrat);
+                              }
+                              if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense)) && ((cashvirtual[jj] + dividendvirtual [jj] + dividendvirtual [jj+1]) >= (costliving [jj] + costliving [jj+1]  + annualrentvirtualFIRE[jj] + annualrentvirtualFIRE[jj+1] + interestexpense * 2))) {
+
+                                      results = jj;
+
+                                      annualincome[jj] = 0;
+                                      annualrent[jj] = 0;
+                                      pricehousedeposit[jj] = 0;
+                                      pricehousedeposit[jj+1] = 0;
+
+                                      annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
+                                      pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
+
+                                      totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+
+                                      kk = 1;
+                                    }
+                      } //cashrati if
+
+
+                    break;
+                  }  // while end
+
+                  if(kk == 0){
+                      annualrentFIRE[jj] = 0;
+                      pricehousedepositFIRE[jj+1] = 0;
+                  }
+                  if(kk == 1){
+                        annualrent[jj] = 0;
+                        pricehousedeposit[jj] = 0;
+                        pricehousedeposit[jj+1] = 0;
+                        if(selectvalueFIRE == "ownership") {
+                            annualrentFIRE[jj] = 0;
+          //                              pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] * (1 + k);
+                            pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] * (1 + k);
+                        }
+
+                        if(selectvalueFIRE == "renting") {
+                              annualrentFIRE[jj+1] = annualrentFIRE[jj] * (1 + k);
+          //                                 pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] ;
+                              pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] ;
+                          }
+                  }
+
+                  cashflow[jj] =  annualincome[jj] - annualrent[jj] - annualrentFIRE[jj] - costliving [jj] - interestexpense ;
+
+                  returns [jj] = totalasset[jj] * l;
+                  dividend [jj] = totalasset[jj]* m;
+
+                  if(cashflow[jj] >= 0){
+                     cashflowreturn[jj] = cashflow[jj]  + cashflow[jj] * (l * 0.447) + returns [jj];
+                  }
+                  else {
+                     cashflowreturn[jj] = cashflow[jj] + returns [jj];
+                  }
+
+          // this is necessary? Yes
+                  totalasset[jj+1] = totalasset[jj] + cashflowreturn[jj];
+
+                  netasset[jj+1] =  totalasset[jj+1] - b -bb + pricehousedeposit[jj+1] + pricehousedepositFIRE[jj+1];
+
+              } // for end
+
+
+              var resulted = document.getElementById("result");
+              resulted.innerHTML = results;
+              resulted.style.color="SteelBlue";
+              resulted.style.bolder;
+
+              var years = document.getElementById("years");
+              var yearss = (year0 + results).toLocaleString('en-US');;
+
+              years.innerHTML = "(" + yearss + ")";
+              years.style.color="Black";
+              years.style.bolder;
+
+              if(results == 100) {
+                  resulted.innerHTML = "";
+    //              document.getElementById("net-assets").innerHTML = "";
+                  alert("I'm sorry you can't retire in 30 years as this condition.\n Adjust the conditions and try again!");
+              }
+              if(results != 100) {
+                  resulted.innerHTML = results;
+                  var numberasset = Math.round(netasset[results]).toLocaleString('en-US');
+  //                document.getElementById("net-assets").innerHTML = numberasset;
+      //            document.getElementById("net-assets").style.bolder;
+      //            document.getElementById("net-assets").style.color="DimGray";
+              }
+
+            }   // if of count end
+
+          }  //calfunc0
+
+
+
+
+
+          document.getElementById("Click-me").onclick = function() {
+
+                calfunc();
+
+          }  // function() end
+
+
+              function calfunc() {
+
+               let count=0;
+
+               cashrat =  parseInt(document.getElementById("cashratio").value)*0.01;
+
+               a = parseInt(document.getElementById("total-asset").value);
+               b = parseInt(document.getElementById("total-liability").value);
+               bb = parseInt(document.getElementById("total-liability2").value);
+               c = parseInt(document.getElementById("price-house-deposit").value);
+               e = parseInt(document.getElementById("annual-income").value);
+               f = parseInt(document.getElementById("annual-rent").value);
+               g = parseInt(document.getElementById("cost-living").value);
+               h = parseInt(document.getElementById("price-house-deposit-FIRE").value);
+               j = parseInt(document.getElementById("rent-FIRE").value);
+               k = parseInt(document.getElementById("inflation-rate").value)*0.01;
+               l = parseInt(document.getElementById("return-investment").value)*0.01;
+               m = parseInt(document.getElementById("dividend-yield").value)*0.01;
+
+
+
+
+               if(count == 0){
+                   selectvalue = document.getElementById('selectvalue').value;
+                   if(selectvalue == "noselect"){
+                      alert("Choose the current way of living");
+                      count = 1;
+                   }
+                   else if(selectvalue == "ownership"){
+                     annualrent[0] = 0;
+
+                   }
+                      else if(selectvalue == "renting"){
+                       annualrent[0] = f;
+                     }
+               }
+
+                 if(count == 0){
+                     selectvalueFIRE = document.getElementById('selectvalueFIRE').value;
+                     if(selectvalueFIRE == "noselect"){
+                          alert("Select the desired way of living");
+                          count = 1;
+                       }
+                      else if(selectvalueFIRE == "ownership"){
+                            annualrentFIRE[0] = 0;
+                      }
+                        else if(selectvalueFIRE == "renting"){
+                            annualrentFIRE[0] = 0;
+                        }
+                  }
+
+
+               if((document.getElementById("total-asset").value=="")&&(count==0)){
+                   alert("Enter Portfolio Worth");
+                   count=1;
+               }
+               if((document.getElementById("total-liability").value=="")&&(count==0)){
+                   alert("Enter Debt");
+                   count=1;
+              }
+              if((document.getElementById("total-liability2").value=="")&&(count==0)){
+                  alert("Enter Liability");
+                  count=1;
+             }
+
+              if((document.getElementById("price-house-deposit").value=="")&&(count==0)){
+                  alert("Enter House Price/Deposit");
+                   count=1;
+              }
+               if((document.getElementById("annual-income").value=="")&&(count==0)){
+                   alert("Enter Income");
+                   count=1;
+               }
+               if((document.getElementById("annual-rent").value=="")&&(count==0)&&(selectvalue == "renting")){
+                   alert("Enter Rent");
+                   count=1;
+               }
+               if((document.getElementById("cost-living").value=="")&&(count==0)){
+                   alert("Enter Living Expenses");
+                   count=1;
+               }
+               if((document.getElementById("price-house-deposit-FIRE").value=="")&&(count==0)){
+                   alert("Enter the House Price/Deposit After FIRE at this point");
+                   count=1;
+               }
+                 if((document.getElementById("rent-FIRE").value=="")&&(count==0)&&(selectvalueFIRE == "renting")){
+                   alert("Enter the Rent After FIRE at this point");
+                   count=1;
+               }
+               if((document.getElementById("inflation-rate").value=="")&&(count==0)){
+                   alert("Enter Inflation Rate");
+                   count=1;
+               }
+               if((document.getElementById("return-investment").value=="")&&(count==0)){
+                   alert("Enter the Return on Portfolio");
+                   count=1;
+               }
+               if((document.getElementById("dividend-yield").value=="")&&(count==0)){
+                   alert("Enter Dividend Yield");
+                   count=1;
+               }
+
+
+              if(isNaN(a) && count==0){
+               alert("Not a number is entered\nEnter numbers in Portfolio");
+                   count=1;
+               }
+               if(isNaN(b) && count==0){
+               alert("Not a number is entered\nEnter numbers in Debt");
+                   count=1;
+               }
+               if(isNaN(bb) && count==0){
+               alert("Not a number is entered\nEnter numbers in Liability");
+                   count=1;
+               }
+               if(isNaN(c) && count==0){
+               alert("Not a number is entered\nEnter numbers in Price of a House/Deposit");
+                   count=1;
+               }
+               if(isNaN(e) && count==0){
+               alert("Not a number is entered\nEnter numbers in Income");
+                   count=1;
+               }
+               if(isNaN(f) && count==0 &&(selectvalue == "renting")){
+               alert("Not a number is entered\nEnter numbers in Rent");
+                   count=1;
+               }
+               if(isNaN(g) && count==0){
+               alert("Not a number is entered\nEnter numbers in Living Expense excluding rent");
+                   count=1;
+               }
+               if(isNaN(h) && count==0){
+               alert("Not a number is entered\nEnter numbers in Price of a House/Deposit After FIRE");
+                   count=1;
+               }
+               if(isNaN(j) && count==0 &&(selectvalueFIRE == "renting")){
+               alert("Not a number is entered\nEnter numbers in Rent After FIRE");
+                   count=1;
+               }
+               if(isNaN(k) && count==0){
+               alert("Not a number is entered\nEnter numbers in Inflation Rate");
+                   count=1;
+               }
+               if(isNaN(l) && count==0){
+               alert("Not a number is entered\nEnter numbers in Return on Portfolio");
+                   count=1;
+               }
+               if(isNaN(m) && count==0){
+               alert("Not a number is entered\nEnter numbers in Dividend Yield");
+                   count=1;
+               }
+
+
+              var jj, kk;
+              jj = 0;
+              kk = 0;
+              results = 100;
+
+              loanrate = k + 0.02;
+              interestexpense = b * loanrate ;
+
+
+              totalasset[0] = a ;
+              pricehousedeposit[0] = c;
+              annualincome[0] = e;
+              costliving[0]= g;
+              pricehousedepositFIRE[0]= 0;
+              dividendyield [0] = 0;
+
+              cashflow[0] = 0;
+
+              returns [0] = 0;
+              dividend [0] = 0;
+
+              annualrentvirtualFIRE [0] = j;
+
+              pricehousedepositvirtualFIRE [0] = h;
+              returnsvirtualFIRE [0] = 0;
+              returnsvirtualFIRE [1] = 0;
+
+              cashvirtual [0] = 0;
+              cashvirtual [1] = 0;
+
+
+
+              cashflowreturn [0] = 0;
+              netasset [0] = a - b -bb + c ;
+
+      if(count == 0){
+
+              for(jj = 0; jj<=30; jj = jj + 1){
+
+                if(jj == 0){
+                  if(selectvalue == "ownership") {
+                     pricehousedeposit[jj+1] = pricehousedeposit[jj] * (1 + k);
+                  }
+                  if(selectvalue == "renting") {
+                      pricehousedeposit[jj+1] = pricehousedeposit[jj];
+                  }
+
+                    if(selectvalueFIRE == "ownership") {
+                        annualrentvirtualFIRE[jj] = 0 ;
+                        annualrentvirtualFIRE[jj+1] = 0 ;
+
+                        pricehousedepositvirtualFIRE[jj+1] = pricehousedepositvirtualFIRE[jj] * (1 + k);
+                    }
+                    if(selectvalueFIRE == "renting") {
+                          annualrentvirtualFIRE[jj+1] = annualrentvirtualFIRE[jj] * (1 + k);
+                    }
+                 }
+
+                if(jj > 0){
+                      costliving [jj] = costliving[jj-1] * (1 + k);
+                      annualincome[jj] = annualincome[jj-1] * (1 + k);
+                      annualrent[jj] = annualrent[jj-1] * (1 + k);
+
+                       if(kk == 0){
+
+                            if(selectvalue == "ownership") {
+                               pricehousedeposit[jj] = pricehousedeposit[jj-1] * (1 + k);
+                               pricehousedeposit[jj+1] = pricehousedeposit[jj] * (1 + k);
+                            }
+                            if(selectvalue == "renting") {
+                                pricehousedeposit[jj] = pricehousedeposit[jj-1];
+                                pricehousedeposit[jj+1] = pricehousedeposit[jj];
+                            }
+
+                              if(selectvalueFIRE == "ownership") {
+//                                  annualrentFIRE[jj] = 0;
+
+                                  annualrentvirtualFIRE[jj] = 0 ;
+                                  annualrentvirtualFIRE[jj+1] = 0 ;
+
+                                  pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
+                                  pricehousedepositvirtualFIRE[jj+1] = pricehousedepositvirtualFIRE[jj] * (1 + k);
+                              }
+                              if(selectvalueFIRE == "renting") {
+//                                    annualrentFIRE[jj] = annualrentFIRE[jj-1] * (1 + k);
+
+                                    annualrentvirtualFIRE[jj] = annualrentvirtualFIRE[jj-1] * (1 + k);
+                                    annualrentvirtualFIRE[jj+1] = annualrentvirtualFIRE[jj] * (1 + k);
+
+                                    pricehousedepositvirtualFIRE[jj] = pricehousedepositvirtualFIRE[jj-1] * (1 + k);
+                              }
+                         }
+                }
+
+
+
+
+                  var increaseofreturnsvirtualFIRE;
+
+
+                  if(kk == 0) {
+                      totalassetvirtualFIRE[jj] = netasset[jj] + b + bb - pricehousedepositvirtualFIRE[jj] ;
+                      returnsvirtualFIRE[jj] = totalassetvirtualFIRE[jj] * l;
+                      costliving [jj+1] = costliving[jj] * (1 + k);
+
+                      cashvirtual[jj] = totalassetvirtualFIRE[jj] * cashrat ;
+
+                      dividendvirtual [jj] = totalassetvirtualFIRE[jj] * m;
+                      dividendvirtual [jj+1] = dividendvirtual [jj] * (1+l-m);
+
+                      totalassetvirtualFIRE[jj+1] = totalassetvirtualFIRE[jj] +returnsvirtualFIRE[jj] - costliving[jj] - annualrentvirtualFIRE[jj] - interestexpense;
+                      returnsvirtualFIRE[jj+1] = totalassetvirtualFIRE[jj+1] * l;
+                      increaseofreturnsvirtualFIRE = returnsvirtualFIRE[jj+1]/returnsvirtualFIRE[jj]-1;
+                  }
+
+                      while(kk == 0 ){
+                        cashr = document.getElementById("cashratio").value;
+                        if(cashr == "ignorecash"){   // if(cashrat == "ignorecash")  --> don't work..
+
+                                  if(jj == 0){
+
+                                  }
+                                  if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense))) {
+
+                                          results = jj;
+
+                                          annualincome[jj] = 0;
+                                          annualrent[jj] = 0;
+                                          pricehousedeposit[jj] = 0;
+                                          pricehousedeposit[jj+1] = 0;
+
+                                          annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
+                                          pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
+
+                                          totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+
+                                          kk = 1;
+                                        }
+                        }  //cashrati if. or else
+
+                        if(cashr != "ignorecash"){
+
+//                                  alert("do work. !=");
+                                  if(jj==0){
+//                                      alert(cashrat);
+                                  }
+                                  if((increaseofreturnsvirtualFIRE >= k) && (returnsvirtualFIRE[jj] >= (annualrentvirtualFIRE[jj] + costliving [jj] + interestexpense)) && ((cashvirtual[jj] + dividendvirtual [jj] + dividendvirtual [jj+1]) >= (costliving [jj] + costliving [jj+1]  + annualrentvirtualFIRE[jj] + annualrentvirtualFIRE[jj+1] + interestexpense * 2))) {
+
+                                          results = jj;
+
+                                          annualincome[jj] = 0;
+                                          annualrent[jj] = 0;
+                                          pricehousedeposit[jj] = 0;
+                                          pricehousedeposit[jj+1] = 0;
+
+                                          annualrentFIRE[jj] = j * Math.pow((1 + k), jj);
+                                          pricehousedepositFIRE[jj] = h * Math.pow((1 + k), jj);
+
+                                          totalasset[jj] =  totalassetvirtualFIRE[jj] ;
+
+                                          kk = 1;
+                                        }
+                          } //cashrati if
+
+
+                        break;
+                      }  // while end
+
+                      if(kk == 0){
+                          annualrentFIRE[jj] = 0;
+                          pricehousedepositFIRE[jj+1] = 0;
+                      }
+                      if(kk == 1){
+                            annualrent[jj] = 0;
+                            pricehousedeposit[jj] = 0;
+                            pricehousedeposit[jj+1] = 0;
+                            if(selectvalueFIRE == "ownership") {
+                                annualrentFIRE[jj] = 0;
+//                              pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] * (1 + k);
+                                pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] * (1 + k);
+                            }
+
+                            if(selectvalueFIRE == "renting") {
+                                  annualrentFIRE[jj+1] = annualrentFIRE[jj] * (1 + k);
+//                                 pricehousedepositFIRE[jj] = pricehousedepositFIRE[jj-1] ;
+                                  pricehousedepositFIRE[jj+1] = pricehousedepositFIRE[jj] ;
+                              }
+                      }
+
+                      cashflow[jj] =  annualincome[jj] - annualrent[jj] - annualrentFIRE[jj] - costliving [jj] - interestexpense ;
+
+                      returns [jj] = totalasset[jj] * l;
+                      dividend [jj] = totalasset[jj]* m;
+
+                      if(cashflow[jj] >= 0){
+                         cashflowreturn[jj] = cashflow[jj]  + cashflow[jj] * (l * 0.447) + returns [jj];
+                      }
+                      else {
+                         cashflowreturn[jj] = cashflow[jj] + returns [jj];
+                      }
+
+// this is necessary? Yes
+                      totalasset[jj+1] = totalasset[jj] + cashflowreturn[jj];
+
+                      netasset[jj+1] =  totalasset[jj+1] - b -bb + pricehousedeposit[jj+1] + pricehousedepositFIRE[jj+1];
+
+                  } // for end
+
+
+                  var resulted = document.getElementById("result");
+                  resulted.innerHTML = results;
+                  resulted.style.color="SteelBlue";
+                  resulted.style.bolder;
+
+                  var years = document.getElementById("years");
+                  var yearss = (year0 + results).toLocaleString('en-US');;
+                  var overyear = year0 + 30;
+
+
+                  if(results == 100) {
+                      resulted.innerHTML = "";
+      //                document.getElementById("net-assets").innerHTML = "";
+                      alert("I'm sorry you can't retire in 30 years as this condition.\n Adjust the conditions and try again!");
+                      years.innerHTML = "(" + overyear + "~)";
+                      years.style.color="Black";
+                      years.style.bolder;
+                  }
+                  if(results != 100) {
+                      resulted.innerHTML = results;
+                      var numberasset = Math.round(netasset[results]).toLocaleString('en-US');
+  //                    document.getElementById("net-assets").innerHTML = numberasset;
+    //                  document.getElementById("net-assets").style.bolder;
+    //                  document.getElementById("net-assets").style.color="DimGray";
+
+                      years.innerHTML = "(" + yearss + ")";
+                      years.style.color="Black";
+                      years.style.bolder;
+                  }
+
+                    jjj = jjj + 1;
+
+                  updategraph();
+
+                }   // if(count == 0) end
+
+              }  //calfunc
+
+                  function updategraph(){
+
+                        for (let i = 0; i <= 30; i++) {
+                            annualincome2[i] = Math.round(annualincome[i])
+                            annualrent2[i] = Math.round(annualrent[i]) ;
+                            annualrentFIRE2[i] = Math.round(annualrentFIRE[i]) ;
+                            totalasset2[i] = Math.round(totalasset[i]) ;
+                            totalassetvirtualFIRE2[i] = Math.round(totalassetvirtualFIRE[i]) ;
+                            dividend2[i] = Math.round(dividend[i]) ;
+                            dividendvirtual2[i] = Math.round(dividendvirtual[i]) ;
+                            netasset2[i] = Math.round(netasset[i]) ;
+                            cashflowreturn2[i] = Math.round(cashflowreturn[i]) ;
+                        }
+
+
+                         if(jjj >= 1){
+                              for (let i = 0; i <= 31; i++) {
+                              removeData(myChart);
+                              }
+                          }
+
+
+
+                         for (let i = 0; i <= 30; i++) {
+                             year = year0 + i;
+
+                             prev = annualincome2[i];
+                             data.push({x: year, y: prev});
+                             prev2 = annualrent2[i];
+                             data2.push({x: year, y: prev2});
+                             prev3 = annualrentFIRE2[i];
+                             data3.push({x: year, y: prev3});
+
+                             prev4 = annualrent2[i]+ annualrentFIRE2[i];
+                             data4.push({x: year, y: prev4});
+
+  //                           prev4 = totalasset2[i];
+    //                         data4.push({x: year, y: prev4});
+//                             prev5 = totalassetvirtualFIRE2[i];
+  //                           data5.push({x: year, y: prev5});
+                             prev6 = dividend2[i];
+                             data6.push({x: year, y: prev6});
+                             prev7 = cashflowreturn2[i];
+                             data7.push({x: year, y: prev7});
+                             prev8 = netasset2[i];
+                             data8.push({x: year, y: prev8});
+
+                           }
+                          if(jjj >= 1){
+                            var labelss = [];
+                            var datass = [];
+                            labelss[0] = 'Net Asset(Left)';
+                            labelss[1] = 'Dividend';
+                            labelss[2] = 'Returns ± Cashflow';
+                            labelss[3] = 'Income';
+                            labelss[4] = 'Rent';
+                            datass[0] = data8;
+                            datass[1] = data6;
+                            datass[2] = data7;
+                            datass[3] = data;
+                            datass[4] = data4;
+                            addData(myChart, labelss, datass);
+                          }
+
+
+
+
+
+
+
+
+                              delayBetweenPoints = totalDuration / data.length;
+
+//                              const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+                                ctx = document.getElementById('myChart').getContext('2d');
+                                myChart = new Chart(ctx, {
+                                  type: 'line',
+                                  data: {
+                                    labels: ['Net asset(Left)', 'Dividend', 'Returns from Invest + Income - Cost'],
+                                    datasets: [{
+                                      label: 'Net Asset(Left)',
+                                      borderColor: 'Navy',
+                                //                      backgroundColor: '',
+                                      borderWidth: 2,
+                                      radius: 0,
+                                      data: data8,
+                                      yAxisID: 'y'
+                                    },
+                                    {
+                                      label: 'Dividend',
+                                      borderColor: 'Green',
+                                      borderWidth: 2,
+                                      radius: 0,
+                                      data: data6,
+                                      yAxisID: 'auxaxis'
+                                    },
+                                    {
+                                      label: 'Returns ± Cashflow',
+                                      borderColor: 'Blue',
+                                      borderWidth: 2,
+                                      radius: 0,
+                                      data: data7,
+                                      yAxisID: 'auxaxis'
+                                    },
+                                    {
+                                      label: 'Income',
+                                      borderColor: 'Black',
+                                      borderWidth: 2,
+                                      radius: 0,
+                                      data: data,
+                                      yAxisID: 'auxaxis'
+                                    },
+                                    {
+                                      label: 'Rent',
+                                      borderColor: 'MediumPurple',
+                                      borderWidth: 2,
+                                      radius: 0,
+                                      data: data4,
+                                      yAxisID: 'auxaxis'
+                                    }]
+                                  },  //data
+                                  options: {
+                                //                responsive: false;
+                                    interaction: {
+                                      intersect: false
+                                    },
+                                    plugins: {
+                                      legend: {
+                                         position: 'top'// 'chartArea'//
+                                      }   //legend: ture    false
+                                    },
+                                    scales: {
+                                        x: {
+                                          beginAtZero: true,
+                                          min: year0,
+                                          max: year0+30,
+                                          type: 'linear'  //linear 'log'
+                                        },
+                                        y: {
+
+                                          suggestedMin: 0,
+                                          suggestedMax: 10000,//netasset[30],
+                                          title: {
+                                            display: true,
+                                            text: 'Net Asset',
+
+    //                                        valueFormatString: "#,##0.##",
+                                           ticks: {
+
+// don't wokr.. https://stackoverflow.com/questions/51108964/shorten-number-labels-in-charts-js
+
+                                          	  callback: function(value, index, values){
+                                                              var numeric1, numeric2;
+                                                              numeric1 = value/1000;
+                                                              numeric2 = value/1000000;
+                                                              if(value >=1000000){
+                                                                return numeric2 + 'M';
+                                                              }
+                                                              else if(value >=1000){
+                                                                      return numeric1 + 'K';
+                                                                    }
+
+
+                                                              return val;
+
+                                                        }   //function
+
+                                            }  //ticks
+
+                                          }  //title
+
+                                        }, //yaxis
+                                        auxaxis: {
+                                          beginAtZero: true,
+                                          position: 'right',
+                                          title: {
+                                            display: true,
+                                            text: 'Cash Flows'
+                                          }
+
+                                        }
+
+                                    } //scales
+                                  } //options
+                                }); // mychart end
+
+
+
+                          function removeData(chart) {
+                              chart.data.labels.pop();
+                              chart.data.datasets.forEach((dataset) => {
+                                  dataset.data.pop();
+                              });
+                              chart.update();
+                          }
+
+
+                          function addData(chart, label, data) {
+                              chart.data.labels.push(label);
+                              chart.data.datasets.forEach((dataset) => {
+                                  dataset.data.push(data);
+                              });
+                              chart.update();
+                          }
+
+                    }    //function updatergraph() end
+
+
+
+
+
+        </script>
+
+    </body>
+
+
+</html>
